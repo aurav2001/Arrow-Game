@@ -16,7 +16,7 @@ module.exports = function (req, res, next) {
   }
 
   try {
-    const decoded = jwt.verify(tokenParts[1], process.env.JWT_SECRET);
+    const decoded = jwt.verify(tokenParts[1], process.env.JWT_SECRET || 'secretKey_Fallback_12345');
     req.user = decoded.user;
     next();
   } catch (err) {

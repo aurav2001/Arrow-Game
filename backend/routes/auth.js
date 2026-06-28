@@ -66,7 +66,7 @@ router.post('/register', async (req, res) => {
 
     jwt.sign(
       payload,
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'secretKey_Fallback_12345',
       { expiresIn: 360000 },
       (err, token) => {
         if (err) throw err;
@@ -113,7 +113,7 @@ router.post('/login', async (req, res) => {
 
     jwt.sign(
       payload,
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'secretKey_Fallback_12345',
       { expiresIn: 360000 },
       (err, token) => {
         if (err) throw err;

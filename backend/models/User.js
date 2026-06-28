@@ -55,19 +55,40 @@ const MongooseUser = mongoose.model('User', UserSchema);
 // JSON DB Fallback implementation
 const DB_FILE = path.join(__dirname, '..', 'db.json');
 
+let memoryDB = { users: [] };
+let isReadOnlyFS = false;
+
 function readDB() {
+  if (isReadOnlyFS) {
+    return memoryDB;
+  }
   if (!fs.existsSync(DB_FILE)) {
-    fs.writeFileSync(DB_FILE, JSON.stringify({ users: [] }, null, 2));
+    try {
+      fs.writeFileSync(DB_FILE, JSON.stringify({ users: [] }, null, 2));
+    } catch (e) {
+      isReadOnlyFS = true;
+      return memoryDB;
+    }
   }
   try {
     return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
   } catch (e) {
-    return { users: [] };
+    isReadOnlyFS = true;
+    return memoryDB;
   }
 }
 
 function writeDB(data) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+  if (isReadOnlyFS) {
+    memoryDB = data;
+    return;
+  }
+  try {
+    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+  } catch (e) {
+    isReadOnlyFS = true;
+    memoryDB = data;
+  }
 }
 
 class LocalUser {
