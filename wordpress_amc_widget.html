@@ -1,0 +1,805 @@
+<!-- WordPress USPL AMC 799 Landing Page Block -->
+<!-- Copy-paste this entire code into a WordPress "Custom HTML" block (Gutenberg) or Elementor HTML widget -->
+
+<!-- Google Fonts: Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* Scoped strictly under .uspl-amc-page-block to prevent any interference with WordPress theme styling */
+  
+  .uspl-amc-page-block {
+    --primary-grad: linear-gradient(135deg, #818cf8, #c084fc);
+    --btn-grad: linear-gradient(135deg, #6366f1, #a855f7);
+    --btn-hover-grad: linear-gradient(135deg, #4f46e5, #9333ea);
+    --bg-slate: #0f172a;
+    --card-slate: #1e293b;
+    --card-slate-alt: #162035;
+    --text-white: #f8fafc;
+    --text-slate: #94a3b8;
+    --green-accent: #10b981;
+    
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(circle at 80% 20%, #1e1b4b 0%, #0f172a 100%) !important;
+    width: 100% !important;
+    min-height: 100vh !important; /* Forces the block to take full viewport height */
+    padding: 80px 40px !important; /* Spacious padding on all four sides */
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Scoped Reset */
+  .uspl-amc-page-block,
+  .uspl-amc-page-block * {
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+  }
+
+  /* Glowing background blobs */
+  .uspl-amc-glow-1 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(168, 85, 247, 0.12);
+    filter: blur(120px);
+    top: -50px;
+    left: -50px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .uspl-amc-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(99, 102, 241, 0.12);
+    filter: blur(140px);
+    bottom: 20%;
+    right: -50px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* --- Section 1: Hero Split Grid --- */
+  .uspl-amc-hero {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 80px auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Left Column: Brand Value Proposition */
+  .uspl-amc-content {
+    text-align: left;
+  }
+
+  .uspl-amc-brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    padding: 6px 16px !important;
+    border-radius: 50px !important;
+    color: #c084fc !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .uspl-amc-brand-badge svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+  }
+
+  .uspl-amc-headline {
+    font-size: 42px !important;
+    font-weight: 800 !important;
+    color: var(--text-white) !important;
+    margin-bottom: 20px !important;
+    letter-spacing: -0.5px;
+  }
+
+  .uspl-amc-headline span {
+    background: var(--primary-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .uspl-amc-desc {
+    font-size: 15px !important;
+    color: var(--text-slate) !important;
+    margin-bottom: 35px !important;
+    max-width: 540px;
+  }
+
+  /* Benefit List Items */
+  .uspl-amc-benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .uspl-amc-benefit-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .uspl-amc-benefit-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+    color: #818cf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .uspl-amc-benefit-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  .uspl-amc-benefit-title {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: var(--text-white) !important;
+    margin-bottom: 4px !important;
+  }
+
+  .uspl-amc-benefit-desc {
+    font-size: 13px !important;
+    color: var(--text-slate) !important;
+  }
+
+  /* Right Side: Pricing Card */
+  .uspl-amc-card-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .uspl-amc-card {
+    width: 100%;
+    max-width: 390px;
+    background: var(--card-slate);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(168, 85, 247, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+  }
+
+  .uspl-amc-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(168, 85, 247, 0.2);
+  }
+
+  /* Top glowing line decoration */
+  .uspl-amc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--btn-grad);
+  }
+
+  /* Popular ribbon */
+  .uspl-amc-ribbon {
+    position: absolute;
+    top: 22px;
+    right: -38px;
+    background: var(--btn-grad);
+    color: #fff !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    padding: 5px 40px !important;
+    transform: rotate(45deg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  /* Pricing Header */
+  .uspl-amc-price-hdr {
+    margin-bottom: 20px;
+  }
+
+  .uspl-amc-plan-name {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: var(--text-white) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .uspl-amc-price-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .uspl-amc-strike {
+    font-size: 15px !important;
+    text-decoration: line-through !important;
+    color: var(--text-slate) !important;
+    margin-right: 8px;
+    font-weight: 500;
+  }
+
+  .uspl-amc-symbol {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: var(--text-white) !important;
+    align-self: flex-start;
+    margin-top: 4px;
+    margin-right: 2px;
+  }
+
+  .uspl-amc-rate {
+    font-size: 52px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .uspl-amc-period {
+    font-size: 14px !important;
+    color: var(--text-slate) !important;
+    margin-left: 4px;
+  }
+
+  .uspl-amc-pill {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--green-accent) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 4px 14px !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .uspl-amc-card-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+    margin: 20px 0;
+  }
+
+  /* Checklist */
+  .uspl-amc-checklist {
+    list-style: none !important;
+    text-align: left !important;
+    margin-bottom: 25px !important;
+  }
+
+  .uspl-amc-check-item {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 12px !important;
+    font-size: 13px !important;
+    color: #e2e8f0 !important;
+    list-style-type: none !important;
+  }
+
+  .uspl-amc-check-bullet {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green-accent);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .uspl-amc-check-bullet svg {
+    width: 10px;
+    height: 10px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3.5;
+  }
+
+  /* Card Action Button */
+  .uspl-amc-btn {
+    display: block !important;
+    width: 100% !important;
+    background: var(--btn-grad) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 15px 24px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.25) !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .uspl-amc-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.6s;
+  }
+
+  .uspl-amc-btn:hover::before {
+    left: 100%;
+  }
+
+  .uspl-amc-btn:hover {
+    transform: translateY(-2px) !important;
+    background: var(--btn-hover-grad) !important;
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4) !important;
+  }
+
+  .uspl-amc-btn:active {
+    transform: translateY(0) !important;
+  }
+
+  .uspl-amc-card-footer {
+    margin-top: 15px !important;
+    font-size: 11px !important;
+    color: var(--text-slate) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+  }
+
+  .uspl-amc-card-footer svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+
+
+  /* --- Section 2: Why Choose Us Section --- */
+  .uspl-why-section {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 60px;
+  }
+
+  /* Section Title Block */
+  .uspl-why-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .uspl-why-subtitle-badge {
+    color: #a855f7 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .uspl-why-title {
+    font-size: 34px !important;
+    font-weight: 800 !important;
+    color: var(--text-white) !important;
+    margin-bottom: 16px !important;
+    letter-spacing: -0.5px;
+  }
+
+  .uspl-why-title span {
+    background: var(--primary-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .uspl-why-lead {
+    font-size: 14px !important;
+    color: var(--text-slate) !important;
+    max-width: 600px;
+    margin: 0 auto !important;
+  }
+
+  /* Feature Grid Layout */
+  .uspl-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+
+  /* Individual feature card */
+  .uspl-why-card {
+    background: var(--card-slate-alt);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px 24px;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .uspl-why-card:hover {
+    transform: translateY(-5px);
+    background: var(--card-slate);
+    border-color: rgba(168, 85, 247, 0.25);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(168, 85, 247, 0.06);
+  }
+
+  /* Feature Icon Wrapper */
+  .uspl-why-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(168, 85, 247, 0.1);
+    color: #c084fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .uspl-why-card:hover .uspl-why-icon-wrap {
+    background: var(--btn-grad);
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
+  }
+
+  .uspl-why-icon-wrap svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  .uspl-why-card-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: var(--text-white) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .uspl-why-card-desc {
+    font-size: 13px !important;
+    color: var(--text-slate) !important;
+    flex-grow: 1;
+  }
+
+
+  /* --- Responsive media queries --- */
+  @media (max-width: 990px) {
+    .uspl-why-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .uspl-amc-hero {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .uspl-amc-content {
+      text-align: center;
+    }
+
+    .uspl-amc-brand-badge {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .uspl-amc-desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .uspl-amc-headline {
+      font-size: 32px !important;
+    }
+    
+    .uspl-amc-benefit-list {
+      align-items: center;
+    }
+
+    .uspl-amc-benefit-item {
+      max-width: 480px;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .uspl-why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .uspl-why-title {
+      font-size: 28px !important;
+    }
+
+    .uspl-amc-page-block {
+      padding: 60px 20px !important; /* Slightly adjusted padding for mobile */
+    }
+  }
+</style>
+
+<div class="uspl-amc-page-block">
+  <!-- Glowing Background Effects -->
+  <div class="uspl-amc-glow-1"></div>
+  <div class="uspl-amc-glow-2"></div>
+
+  <!-- Hero Section -->
+  <div class="uspl-amc-hero">
+    <!-- Left Column: Value Proposition -->
+    <div class="uspl-amc-content">
+      <!-- Badge -->
+      <div class="uspl-amc-brand-badge">
+        <svg viewBox="0 0 24 24">
+          <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+        </svg>
+        USPL Protection Care
+      </div>
+
+      <!-- Headline -->
+      <h1 class="uspl-amc-headline">
+        Complete Peace of Mind with <span>USPL Smart AMC</span>
+      </h1>
+
+      <!-- Description -->
+      <p class="uspl-amc-desc">
+        Say goodbye to unexpected breakdown bills and appliance repair headaches. The USPL Smart AMC plan ensures your home appliances stay in top-notch condition all year round with expert maintenance and priority support.
+      </p>
+
+      <!-- Key Benefits List -->
+      <div class="uspl-amc-benefit-list">
+        <!-- Benefit 1 -->
+        <div class="uspl-amc-benefit-item">
+          <div class="uspl-amc-benefit-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707-.707M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="uspl-amc-benefit-title">Super Fast 2-Hour Response</h4>
+            <p class="uspl-amc-benefit-desc">No more waiting. Our engineers are dispatched immediately on priority request.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="uspl-amc-benefit-item">
+          <div class="uspl-amc-benefit-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="uspl-amc-benefit-title">100% Certified Engineers</h4>
+            <p class="uspl-amc-benefit-desc">All visits are handled by verified, background-checked and expert USPL professionals.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="uspl-amc-benefit-item">
+          <div class="uspl-amc-benefit-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="16" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"></rect>
+              <line x1="12" y1="11" x2="12" y2="13" stroke-linecap="round" stroke-linejoin="round"></line>
+              <path d="M2 10h20" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="uspl-amc-benefit-title">No Hidden Service Charges</h4>
+            <p class="uspl-amc-benefit-desc">Absolutely zero travel or inspection fees. Pay only for the spare parts if required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Pricing Card -->
+    <div class="uspl-amc-card-wrapper">
+      <div class="uspl-amc-card">
+        <!-- Ribbon -->
+        <div class="uspl-amc-ribbon">Best Value</div>
+
+        <!-- Pricing Header -->
+        <div class="uspl-amc-price-hdr">
+          <h3 class="uspl-amc-plan-name">USPL Smart AMC Plan</h3>
+          
+          <div class="uspl-amc-price-box">
+            <span class="uspl-amc-strike">₹1,299</span>
+            <span class="uspl-amc-symbol">₹</span>
+            <span class="uspl-amc-rate">799</span>
+            <span class="uspl-amc-period">/year</span>
+          </div>
+
+          <span class="uspl-amc-pill">Save ₹500 instantly</span>
+        </div>
+
+        <div class="uspl-amc-card-divider"></div>
+
+        <!-- Features list -->
+        <ul class="uspl-amc-checklist">
+          <li class="uspl-amc-check-item">
+            <span class="uspl-amc-check-bullet">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            3 Free Preventive Inspections
+          </li>
+          <li class="uspl-amc-check-item">
+            <span class="uspl-amc-check-bullet">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            Unlimited Free Breakdown Services
+          </li>
+          <li class="uspl-amc-check-item">
+            <span class="uspl-amc-check-bullet">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            Priority 2-Hour Response Time
+          </li>
+          <li class="uspl-amc-check-item">
+            <span class="uspl-amc-check-bullet">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            Flat 10% Discount on All Spares
+          </li>
+          <li class="uspl-amc-check-item">
+            <span class="uspl-amc-check-bullet">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            Certified & Verified USPL Engineers
+          </li>
+          <li class="uspl-amc-check-item">
+            <span class="uspl-amc-check-bullet">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            Zero Visiting & Diagnostic Fees
+          </li>
+        </ul>
+
+        <!-- Action Button -->
+        <a href="#" class="uspl-amc-btn">Activate USPL Plan</a>
+
+        <!-- Footer -->
+        <div class="uspl-amc-card-footer">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          Secure 256-bit SSL Gateway
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Why Choose Us Section -->
+  <div class="uspl-why-section">
+    <!-- Header Block -->
+    <div class="uspl-why-header">
+      <span class="uspl-why-subtitle-badge">Our Pillars</span>
+      <h2 class="uspl-why-title">Why Thousands Trust <span>USPL Care</span></h2>
+      <p class="uspl-why-lead">We combine technology with expert human support to give you unmatched home maintenance and support services.</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="uspl-why-grid">
+      <!-- Card 1 -->
+      <div class="uspl-why-card">
+        <div class="uspl-why-icon-wrap">
+          <!-- Clock Icon -->
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3 class="uspl-why-card-title">24/7 Helpline Support</h3>
+        <p class="uspl-why-card-desc">Need assistance? Our dedicated customer care line is active round-the-clock for breakdown logging.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="uspl-why-card">
+        <div class="uspl-why-icon-wrap">
+          <!-- Award Icon -->
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+        </div>
+        <h3 class="uspl-why-card-title">100% Original Spares</h3>
+        <p class="uspl-why-card-desc">We never compromise. All replacements are guaranteed 100% genuine and sourced directly from brands.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="uspl-why-card">
+        <div class="uspl-why-icon-wrap">
+          <!-- Smile Icon -->
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+        </div>
+        <h3 class="uspl-why-card-title">Satisfaction Guaranteed</h3>
+        <p class="uspl-why-card-desc">Your satisfaction is our goal. If you are not happy with our service, we make it right at no extra cost.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="uspl-why-card">
+        <div class="uspl-why-icon-wrap">
+          <!-- Tool Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+        </div>
+        <h3 class="uspl-why-card-title">Smart Tech Diagnostics</h3>
+        <p class="uspl-why-card-desc">USPL professionals utilize advanced digital testing tools to diagnose faults quickly & accurately.</p>
+      </div>
+    </div>
+  </div>
+</div>

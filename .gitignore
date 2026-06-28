@@ -1,0 +1,26 @@
+# Dependency directories
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Environment variables
+.env
+backend/.env
+frontend/.env
+
+# Local database and audits
+backend/db.json
+backend/audit_logs.txt
+
+# Build outputs
+dist/
+frontend/dist/
+build/
+
+# IDE and system files
+.vscode/
+.idea/
+.gemini/
+*.log
+.DS_Store
+Thumbs.db
