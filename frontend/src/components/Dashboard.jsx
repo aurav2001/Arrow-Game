@@ -3,7 +3,7 @@ import { LogOut, Trophy, Play, Video, Star, Lock, CheckCircle, Target } from 'lu
 import { playClick } from '../utils/audio';
 import { levels } from '../levels';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export default function Dashboard({ user, onSelectLevel, onLogout, onToggleCreatorMode }) {
   const [showLeaderboard, setShowLeaderboard] = useState(false);
