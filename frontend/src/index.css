@@ -825,3 +825,23 @@ body {
     --board-size: min(340px, 92vw);
   }
 }
+
+.dev-credit {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+  font-family: var(--font-primary);
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.dev-credit:hover {
+  opacity: 1;
+}
+
+.dev-credit-name {
+  color: var(--neon-cyan);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}

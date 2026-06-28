@@ -148,6 +148,10 @@ export default function Auth({ onAuthSuccess }) {
           </span>
         </p>
       </div>
+
+      <p className="dev-credit">
+        Developed with ❤️ by <span className="dev-credit-name">Gaurav Pandey</span>
+      </p>
     </div>
   );
 }
