@@ -293,41 +293,109 @@ export const levels = [
     name: "Intricate Labyrinth",
     gridSize: 20,
     shapes: [
+      // Chain A
       {
-        id: "s1",
-        cells: [
-          { x: 1, y: 1 }, { x: 2, y: 1 }, { x: 3, y: 1 }, { x: 4, y: 1 }, { x: 5, y: 1 },
-          { x: 5, y: 2 }, { x: 5, y: 3 }, { x: 4, y: 3 }, { x: 3, y: 3 }, { x: 2, y: 3 },
-          { x: 2, y: 4 }, { x: 2, y: 5 }, { x: 3, y: 5 }, { x: 4, y: 5 }
-        ],
+        id: "a1",
+        cells: [{ x: 1, y: 10 }, { x: 1, y: 5 }],
         exitDir: "up"
       },
       {
-        id: "s2",
-        cells: [
-          { x: 7, y: 1 }, { x: 8, y: 1 }, { x: 9, y: 1 }, { x: 10, y: 1 },
-          { x: 10, y: 2 }, { x: 10, y: 3 }, { x: 9, y: 3 }, { x: 8, y: 3 },
-          { x: 8, y: 4 }, { x: 8, y: 5 }, { x: 9, y: 5 }, { x: 10, y: 5 }
-        ],
+        id: "a2",
+        cells: [{ x: 0, y: 11 }, { x: 5, y: 11 }],
         exitDir: "right"
       },
       {
-        id: "s3",
-        cells: [
-          { x: 1, y: 7 }, { x: 2, y: 7 }, { x: 3, y: 7 }, { x: 3, y: 8 },
-          { x: 3, y: 9 }, { x: 2, y: 9 }, { x: 1, y: 9 }, { x: 1, y: 10 },
-          { x: 1, y: 11 }, { x: 2, y: 11 }, { x: 3, y: 11 }
-        ],
+        id: "a3",
+        cells: [{ x: 6, y: 12 }, { x: 6, y: 4 }],
+        exitDir: "up"
+      },
+      {
+        id: "a4",
+        cells: [{ x: 7, y: 3 }, { x: 2, y: 3 }],
         exitDir: "left"
       },
       {
-        id: "s4",
-        cells: [
-          { x: 5, y: 7 }, { x: 5, y: 8 }, { x: 6, y: 8 }, { x: 7, y: 8 },
-          { x: 7, y: 9 }, { x: 7, y: 10 }, { x: 6, y: 10 }, { x: 5, y: 10 },
-          { x: 5, y: 11 }, { x: 5, y: 12 }, { x: 6, y: 12 }, { x: 7, y: 12 }
-        ],
+        id: "a5",
+        cells: [{ x: 1, y: 0 }, { x: 1, y: 4 }],
         exitDir: "down"
+      },
+      // Chain B
+      {
+        id: "b1",
+        cells: [{ x: 18, y: 1 }, { x: 18, y: 10 }],
+        exitDir: "down"
+      },
+      {
+        id: "b2",
+        cells: [{ x: 19, y: 11 }, { x: 14, y: 11 }],
+        exitDir: "left"
+      },
+      {
+        id: "b3",
+        cells: [{ x: 13, y: 12 }, { x: 13, y: 4 }],
+        exitDir: "up"
+      },
+      {
+        id: "b4",
+        cells: [{ x: 12, y: 3 }, { x: 17, y: 3 }],
+        exitDir: "right"
+      },
+      {
+        id: "b5",
+        cells: [{ x: 18, y: 0 }, { x: 18, y: 4 }],
+        exitDir: "down"
+      },
+      // Chain C
+      {
+        id: "c1",
+        cells: [{ x: 2, y: 18 }, { x: 10, y: 18 }],
+        exitDir: "right"
+      },
+      {
+        id: "c2",
+        cells: [{ x: 11, y: 19 }, { x: 11, y: 14 }],
+        exitDir: "up"
+      },
+      {
+        id: "c3",
+        cells: [{ x: 12, y: 13 }, { x: 7, y: 13 }],
+        exitDir: "left"
+      },
+      {
+        id: "c4",
+        cells: [{ x: 6, y: 13 }, { x: 6, y: 17 }],
+        exitDir: "down"
+      },
+      {
+        id: "c5",
+        cells: [{ x: 10, y: 19 }, { x: 0, y: 19 }],
+        exitDir: "left"
+      },
+      // Chain D
+      {
+        id: "d1",
+        cells: [{ x: 17, y: 18 }, { x: 13, y: 18 }],
+        exitDir: "left"
+      },
+      {
+        id: "d2",
+        cells: [{ x: 12, y: 19 }, { x: 12, y: 15 }],
+        exitDir: "up"
+      },
+      {
+        id: "d3",
+        cells: [{ x: 11, y: 14 }, { x: 16, y: 14 }],
+        exitDir: "right"
+      },
+      {
+        id: "d4",
+        cells: [{ x: 17, y: 13 }, { x: 17, y: 17 }],
+        exitDir: "down"
+      },
+      {
+        id: "d5",
+        cells: [{ x: 13, y: 19 }, { x: 19, y: 19 }],
+        exitDir: "right"
       }
     ]
   },
@@ -336,65 +404,84 @@ export const levels = [
     name: "The Pinwheel Lock",
     gridSize: 20,
     shapes: [
+      // Inner Pinwheel
       {
-        id: "p1",
-        cells: [{ x: 10, y: 7 }, { x: 10, y: 11 }],
-        exitDir: "up"
-      },
-      {
-        id: "p2",
-        cells: [{ x: 7, y: 5 }, { x: 12, y: 5 }],
+        id: "ip1",
+        cells: [{ x: 8, y: 8 }, { x: 11, y: 8 }],
         exitDir: "right"
       },
       {
-        id: "p3",
-        cells: [{ x: 13, y: 4 }, { x: 13, y: 12 }],
+        id: "ip2",
+        cells: [{ x: 12, y: 8 }, { x: 12, y: 11 }],
         exitDir: "down"
       },
       {
-        id: "p4",
-        cells: [{ x: 8, y: 13 }, { x: 14, y: 13 }],
+        id: "ip3",
+        cells: [{ x: 12, y: 12 }, { x: 9, y: 12 }],
         exitDir: "left"
       },
       {
-        id: "p5",
-        cells: [{ x: 7, y: 8 }, { x: 7, y: 14 }],
+        id: "ip4",
+        cells: [{ x: 8, y: 12 }, { x: 8, y: 9 }],
         exitDir: "up"
       },
+      // Middle Pinwheel
       {
-        id: "g1",
-        cells: [{ x: 4, y: 13 }, { x: 6, y: 13 }],
+        id: "mp1",
+        cells: [{ x: 6, y: 6 }, { x: 13, y: 6 }],
+        exitDir: "right"
+      },
+      {
+        id: "mp2",
+        cells: [{ x: 14, y: 6 }, { x: 14, y: 13 }],
+        exitDir: "down"
+      },
+      {
+        id: "mp3",
+        cells: [{ x: 14, y: 14 }, { x: 7, y: 14 }],
         exitDir: "left"
       },
       {
-        id: "w1",
-        cells: [{ x: 4, y: 3 }, { x: 4, y: 8 }, { x: 6, y: 8 }],
+        id: "mp4",
+        cells: [{ x: 6, y: 14 }, { x: 6, y: 7 }],
         exitDir: "up"
       },
+      // Outer Pinwheel
       {
-        id: "o1",
-        cells: [{ x: 3, y: 2 }, { x: 5, y: 2 }],
+        id: "op1",
+        cells: [{ x: 4, y: 4 }, { x: 13, y: 4 }],
         exitDir: "right"
       },
       {
-        id: "o2",
-        cells: [{ x: 2, y: 1 }, { x: 2, y: 4 }],
+        id: "op2",
+        cells: [{ x: 16, y: 5 }, { x: 16, y: 15 }],
         exitDir: "down"
       },
       {
-        id: "cr1",
-        cells: [{ x: 15, y: 13 }, { x: 15, y: 17 }, { x: 18, y: 17 }],
-        exitDir: "right"
+        id: "op3",
+        cells: [{ x: 16, y: 16 }, { x: 5, y: 16 }],
+        exitDir: "left"
       },
       {
-        id: "cr2",
-        cells: [{ x: 17, y: 14 }, { x: 17, y: 16 }],
+        id: "op4",
+        cells: [{ x: 4, y: 16 }, { x: 4, y: 5 }],
+        exitDir: "up"
+      },
+      // Keys
+      {
+        id: "k1",
+        cells: [{ x: 15, y: 5 }, { x: 15, y: 3 }],
         exitDir: "up"
       },
       {
-        id: "cr3",
-        cells: [{ x: 16, y: 18 }, { x: 19, y: 18 }],
-        exitDir: "down"
+        id: "k2",
+        cells: [{ x: 14, y: 1 }, { x: 16, y: 1 }],
+        exitDir: "right"
+      },
+      {
+        id: "k3",
+        cells: [{ x: 18, y: 2 }, { x: 18, y: 0 }],
+        exitDir: "up"
       }
     ]
   },
@@ -404,63 +491,53 @@ export const levels = [
     gridSize: 20,
     shapes: [
       {
-        id: "k1",
-        cells: [{ x: 5, y: 10 }, { x: 15, y: 10 }],
+        id: "key",
+        cells: [{ x: 1, y: 10 }, { x: 12, y: 10 }],
         exitDir: "right"
       },
       {
-        id: "v1",
-        cells: [{ x: 16, y: 8 }, { x: 16, y: 12 }],
+        id: "g1",
+        cells: [{ x: 14, y: 7 }, { x: 14, y: 11 }],
+        exitDir: "down"
+      },
+      {
+        id: "g2",
+        cells: [{ x: 16, y: 13 }, { x: 16, y: 9 }],
         exitDir: "up"
       },
       {
+        id: "g3",
+        cells: [{ x: 18, y: 7 }, { x: 18, y: 11 }],
+        exitDir: "down"
+      },
+      {
         id: "h1",
-        cells: [{ x: 14, y: 7 }, { x: 17, y: 7 }],
+        cells: [{ x: 15, y: 12 }, { x: 12, y: 12 }],
         exitDir: "left"
       },
       {
-        id: "v2",
-        cells: [{ x: 13, y: 5 }, { x: 13, y: 9 }],
+        id: "v1",
+        cells: [{ x: 10, y: 11 }, { x: 10, y: 14 }],
         exitDir: "down"
       },
       {
         id: "h2",
-        cells: [{ x: 11, y: 11 }, { x: 14, y: 11 }],
+        cells: [{ x: 11, y: 15 }, { x: 8, y: 15 }],
+        exitDir: "left"
+      },
+      {
+        id: "h3",
+        cells: [{ x: 15, y: 8 }, { x: 17, y: 8 }],
         exitDir: "right"
       },
       {
-        id: "lk1",
-        cells: [{ x: 2, y: 10 }, { x: 4, y: 10 }],
-        exitDir: "left"
-      },
-      {
-        id: "lk2",
-        cells: [{ x: 3, y: 9 }, { x: 3, y: 12 }],
-        exitDir: "down"
-      },
-      {
-        id: "lk3",
-        cells: [{ x: 1, y: 11 }, { x: 4, y: 11 }],
+        id: "v2",
+        cells: [{ x: 19, y: 9 }, { x: 19, y: 6 }],
         exitDir: "up"
       },
       {
-        id: "dec1",
-        cells: [{ x: 8, y: 2 }, { x: 8, y: 4 }],
-        exitDir: "up"
-      },
-      {
-        id: "dec2",
-        cells: [{ x: 7, y: 3 }, { x: 9, y: 3 }],
-        exitDir: "left"
-      },
-      {
-        id: "dec3",
-        cells: [{ x: 8, y: 16 }, { x: 8, y: 18 }],
-        exitDir: "down"
-      },
-      {
-        id: "dec4",
-        cells: [{ x: 6, y: 17 }, { x: 10, y: 17 }],
+        id: "h4",
+        cells: [{ x: 17, y: 12 }, { x: 19, y: 12 }],
         exitDir: "right"
       }
     ]
@@ -471,53 +548,63 @@ export const levels = [
     gridSize: 20,
     shapes: [
       {
-        id: "av1",
-        cells: [{ x: 5, y: 4 }, { x: 5, y: 15 }],
-        exitDir: "up"
-      },
-      {
-        id: "av2",
-        cells: [{ x: 9, y: 4 }, { x: 9, y: 15 }],
-        exitDir: "down"
-      },
-      {
-        id: "av3",
-        cells: [{ x: 13, y: 4 }, { x: 13, y: 15 }],
-        exitDir: "up"
-      },
-      {
-        id: "st1",
-        cells: [{ x: 4, y: 6 }, { x: 15, y: 6 }],
-        exitDir: "left"
-      },
-      {
-        id: "st2",
-        cells: [{ x: 4, y: 10 }, { x: 15, y: 10 }],
+        id: "hr1",
+        cells: [{ x: 3, y: 4 }, { x: 6, y: 4 }],
         exitDir: "right"
       },
       {
-        id: "st3",
-        cells: [{ x: 4, y: 14 }, { x: 15, y: 14 }],
-        exitDir: "left"
-      },
-      {
-        id: "g_top",
-        cells: [{ x: 3, y: 2 }, { x: 7, y: 2 }],
-        exitDir: "right"
-      },
-      {
-        id: "g_left",
-        cells: [{ x: 2, y: 5 }, { x: 2, y: 11 }],
-        exitDir: "up"
-      },
-      {
-        id: "g_right",
-        cells: [{ x: 16, y: 8 }, { x: 16, y: 13 }],
+        id: "vc1",
+        cells: [{ x: 7, y: 3 }, { x: 7, y: 6 }],
         exitDir: "down"
       },
       {
-        id: "g_bottom",
-        cells: [{ x: 8, y: 17 }, { x: 14, y: 17 }],
+        id: "hr2",
+        cells: [{ x: 6, y: 8 }, { x: 10, y: 8 }],
+        exitDir: "right"
+      },
+      {
+        id: "vc2",
+        cells: [{ x: 11, y: 7 }, { x: 11, y: 10 }],
+        exitDir: "down"
+      },
+      {
+        id: "hr3",
+        cells: [{ x: 11, y: 12 }, { x: 14, y: 12 }],
+        exitDir: "right"
+      },
+      {
+        id: "vc3",
+        cells: [{ x: 15, y: 11 }, { x: 15, y: 14 }],
+        exitDir: "down"
+      },
+      {
+        id: "vu1",
+        cells: [{ x: 14, y: 5 }, { x: 14, y: 3 }],
+        exitDir: "up"
+      },
+      {
+        id: "hl1",
+        cells: [{ x: 18, y: 6 }, { x: 14, y: 6 }],
+        exitDir: "left"
+      },
+      {
+        id: "vu2",
+        cells: [{ x: 13, y: 9 }, { x: 13, y: 6 }],
+        exitDir: "up"
+      },
+      {
+        id: "hl2",
+        cells: [{ x: 17, y: 5 }, { x: 13, y: 5 }],
+        exitDir: "left"
+      },
+      {
+        id: "vu3",
+        cells: [{ x: 8, y: 7 }, { x: 8, y: 5 }],
+        exitDir: "up"
+      },
+      {
+        id: "hl3",
+        cells: [{ x: 12, y: 2 }, { x: 8, y: 2 }],
         exitDir: "left"
       }
     ]
@@ -528,34 +615,64 @@ export const levels = [
     gridSize: 20,
     shapes: [
       {
-        id: "c1",
-        cells: [{ x: 9, y: 9 }, { x: 10, y: 9 }],
+        id: "sp1",
+        cells: [{ x: 3, y: 2 }, { x: 17, y: 2 }],
         exitDir: "right"
       },
       {
-        id: "r1_v",
-        cells: [{ x: 12, y: 7 }, { x: 12, y: 12 }],
+        id: "sp2",
+        cells: [{ x: 18, y: 2 }, { x: 18, y: 17 }],
         exitDir: "down"
       },
       {
-        id: "r2_h",
-        cells: [{ x: 10, y: 14 }, { x: 15, y: 14 }],
-        exitDir: "right"
-      },
-      {
-        id: "r1_h",
-        cells: [{ x: 7, y: 6 }, { x: 12, y: 6 }],
+        id: "sp3",
+        cells: [{ x: 18, y: 18 }, { x: 2, y: 18 }],
         exitDir: "left"
       },
       {
-        id: "r3_v",
-        cells: [{ x: 6, y: 5 }, { x: 6, y: 10 }],
+        id: "sp4",
+        cells: [{ x: 1, y: 18 }, { x: 1, y: 4 }],
         exitDir: "up"
       },
       {
-        id: "r4_h",
-        cells: [{ x: 4, y: 3 }, { x: 8, y: 3 }],
+        id: "sp5",
+        cells: [{ x: 4, y: 4 }, { x: 15, y: 4 }],
+        exitDir: "right"
+      },
+      {
+        id: "sp6",
+        cells: [{ x: 16, y: 5 }, { x: 16, y: 15 }],
+        exitDir: "down"
+      },
+      {
+        id: "sp7",
+        cells: [{ x: 15, y: 16 }, { x: 4, y: 16 }],
         exitDir: "left"
+      },
+      {
+        id: "sp8",
+        cells: [{ x: 3, y: 16 }, { x: 3, y: 6 }],
+        exitDir: "up"
+      },
+      {
+        id: "sp9",
+        cells: [{ x: 6, y: 6 }, { x: 13, y: 6 }],
+        exitDir: "right"
+      },
+      {
+        id: "sp10",
+        cells: [{ x: 14, y: 5 }, { x: 14, y: 13 }],
+        exitDir: "down"
+      },
+      {
+        id: "sp11",
+        cells: [{ x: 15, y: 14 }, { x: 6, y: 14 }],
+        exitDir: "left"
+      },
+      {
+        id: "sp12",
+        cells: [{ x: 5, y: 14 }, { x: 5, y: 8 }],
+        exitDir: "up"
       }
     ]
   },
@@ -565,34 +682,64 @@ export const levels = [
     gridSize: 20,
     shapes: [
       {
-        id: "h_cap",
-        cells: [{ x: 4, y: 1 }, { x: 10, y: 1 }],
+        id: "sb1",
+        cells: [{ x: 1, y: 3 }, { x: 18, y: 3 }],
         exitDir: "right"
       },
       {
-        id: "v_mid",
-        cells: [{ x: 7, y: 2 }, { x: 7, y: 13 }],
+        id: "v1",
+        cells: [{ x: 19, y: 5 }, { x: 19, y: 2 }],
         exitDir: "up"
       },
       {
-        id: "z1",
-        cells: [{ x: 2, y: 3 }, { x: 6, y: 3 }, { x: 6, y: 5 }, { x: 5, y: 5 }],
-        exitDir: "right"
-      },
-      {
-        id: "z2",
-        cells: [{ x: 12, y: 3 }, { x: 8, y: 3 }, { x: 8, y: 5 }, { x: 9, y: 5 }],
+        id: "h1",
+        cells: [{ x: 19, y: 1 }, { x: 10, y: 1 }],
         exitDir: "left"
       },
       {
-        id: "z3",
-        cells: [{ x: 2, y: 11 }, { x: 6, y: 11 }, { x: 6, y: 9 }, { x: 5, y: 9 }],
+        id: "v6",
+        cells: [{ x: 5, y: 3 }, { x: 5, y: 0 }],
+        exitDir: "up"
+      },
+      {
+        id: "sb2",
+        cells: [{ x: 18, y: 6 }, { x: 1, y: 6 }],
+        exitDir: "left"
+      },
+      {
+        id: "v2",
+        cells: [{ x: 0, y: 5 }, { x: 0, y: 8 }],
+        exitDir: "down"
+      },
+      {
+        id: "h2",
+        cells: [{ x: 0, y: 10 }, { x: 9, y: 10 }],
         exitDir: "right"
       },
       {
-        id: "z4",
-        cells: [{ x: 12, y: 11 }, { x: 8, y: 11 }, { x: 8, y: 9 }, { x: 9, y: 9 }],
+        id: "v7",
+        cells: [{ x: 12, y: 10 }, { x: 12, y: 13 }],
+        exitDir: "down"
+      },
+      {
+        id: "sb3",
+        cells: [{ x: 1, y: 13 }, { x: 18, y: 13 }],
+        exitDir: "right"
+      },
+      {
+        id: "v3",
+        cells: [{ x: 19, y: 15 }, { x: 19, y: 12 }],
+        exitDir: "up"
+      },
+      {
+        id: "h3",
+        cells: [{ x: 19, y: 11 }, { x: 10, y: 11 }],
         exitDir: "left"
+      },
+      {
+        id: "v8",
+        cells: [{ x: 6, y: 13 }, { x: 6, y: 10 }],
+        exitDir: "up"
       }
     ]
   },
@@ -602,28 +749,53 @@ export const levels = [
     gridSize: 20,
     shapes: [
       {
-        id: "h1",
-        cells: [{ x: 5, y: 5 }, { x: 8, y: 5 }, { x: 8, y: 9 }, { x: 11, y: 9 }, { x: 11, y: 13 }, { x: 14, y: 13 }],
+        id: "a1",
+        cells: [{ x: 2, y: 2 }, { x: 5, y: 2 }],
         exitDir: "right"
       },
       {
-        id: "h2",
-        cells: [{ x: 6, y: 6 }, { x: 6, y: 10 }, { x: 9, y: 10 }, { x: 9, y: 14 }, { x: 12, y: 14 }, { x: 12, y: 17 }],
+        id: "b1",
+        cells: [{ x: 6, y: 1 }, { x: 6, y: 4 }],
         exitDir: "down"
       },
       {
-        id: "block_r",
-        cells: [{ x: 15, y: 11 }, { x: 15, y: 15 }],
-        exitDir: "up"
+        id: "a2",
+        cells: [{ x: 4, y: 5 }, { x: 7, y: 5 }],
+        exitDir: "right"
       },
       {
-        id: "block_d",
-        cells: [{ x: 10, y: 18 }, { x: 14, y: 18 }],
-        exitDir: "left"
+        id: "b2",
+        cells: [{ x: 8, y: 4 }, { x: 8, y: 7 }],
+        exitDir: "down"
       },
       {
-        id: "block_l",
-        cells: [{ x: 9, y: 16 }, { x: 9, y: 19 }],
+        id: "a3",
+        cells: [{ x: 6, y: 8 }, { x: 9, y: 8 }],
+        exitDir: "right"
+      },
+      {
+        id: "b3",
+        cells: [{ x: 10, y: 7 }, { x: 10, y: 10 }],
+        exitDir: "down"
+      },
+      {
+        id: "a4",
+        cells: [{ x: 8, y: 11 }, { x: 11, y: 11 }],
+        exitDir: "right"
+      },
+      {
+        id: "b4",
+        cells: [{ x: 12, y: 10 }, { x: 12, y: 13 }],
+        exitDir: "down"
+      },
+      {
+        id: "a5",
+        cells: [{ x: 10, y: 14 }, { x: 13, y: 14 }],
+        exitDir: "right"
+      },
+      {
+        id: "b5",
+        cells: [{ x: 14, y: 13 }, { x: 14, y: 16 }],
         exitDir: "down"
       }
     ]
@@ -634,34 +806,34 @@ export const levels = [
     gridSize: 20,
     shapes: [
       {
-        id: "p1",
-        cells: [{ x: 8, y: 8 }, { x: 8, y: 6 }],
-        exitDir: "up"
-      },
-      {
-        id: "p2",
-        cells: [{ x: 7, y: 5 }, { x: 12, y: 5 }],
+        id: "lock",
+        cells: [{ x: 8, y: 10 }, { x: 12, y: 10 }],
         exitDir: "right"
       },
       {
-        id: "p3",
-        cells: [{ x: 13, y: 4 }, { x: 13, y: 11 }],
-        exitDir: "down"
+        id: "b2",
+        cells: [{ x: 13, y: 10 }, { x: 15, y: 10 }],
+        exitDir: "right"
       },
       {
-        id: "p4",
-        cells: [{ x: 6, y: 12 }, { x: 14, y: 12 }],
-        exitDir: "left"
-      },
-      {
-        id: "p5",
-        cells: [{ x: 5, y: 7 }, { x: 5, y: 13 }],
+        id: "v1",
+        cells: [{ x: 17, y: 11 }, { x: 17, y: 8 }],
         exitDir: "up"
       },
       {
-        id: "key",
-        cells: [{ x: 3, y: 12 }, { x: 5, y: 12 }],
+        id: "v2",
+        cells: [{ x: 19, y: 9 }, { x: 19, y: 12 }],
+        exitDir: "down"
+      },
+      {
+        id: "h1",
+        cells: [{ x: 18, y: 6 }, { x: 15, y: 6 }],
         exitDir: "left"
+      },
+      {
+        id: "h2",
+        cells: [{ x: 16, y: 14 }, { x: 19, y: 14 }],
+        exitDir: "right"
       }
     ]
   },
@@ -671,59 +843,69 @@ export const levels = [
     gridSize: 20,
     shapes: [
       {
-        id: "c_up",
-        cells: [{ x: 9, y: 9 }, { x: 9, y: 5 }],
-        exitDir: "up"
-      },
-      {
-        id: "c_right",
-        cells: [{ x: 10, y: 10 }, { x: 15, y: 10 }, { x: 15, y: 15 }],
+        id: "q1_h",
+        cells: [{ x: 2, y: 4 }, { x: 6, y: 4 }],
         exitDir: "right"
       },
       {
-        id: "c_down",
-        cells: [{ x: 9, y: 11 }, { x: 9, y: 13 }],
+        id: "q2_v",
+        cells: [{ x: 8, y: 2 }, { x: 8, y: 6 }],
         exitDir: "down"
       },
       {
-        id: "c_left",
-        cells: [{ x: 8, y: 10 }, { x: 6, y: 10 }],
+        id: "q3_h",
+        cells: [{ x: 13, y: 8 }, { x: 8, y: 8 }],
         exitDir: "left"
       },
       {
-        id: "tl_1",
-        cells: [{ x: 2, y: 2 }, { x: 5, y: 2 }],
-        exitDir: "left"
-      },
-      {
-        id: "tl_2",
-        cells: [{ x: 4, y: 3 }, { x: 4, y: 6 }],
+        id: "q4_v",
+        cells: [{ x: 6, y: 12 }, { x: 6, y: 8 }],
         exitDir: "up"
       },
       {
-        id: "tl_block",
-        cells: [{ x: 3, y: 6 }, { x: 10, y: 6 }],
-        exitDir: "left"
+        id: "kb1",
+        cells: [{ x: 7, y: 3 }, { x: 7, y: 5 }],
+        exitDir: "down"
       },
       {
-        id: "tr_1",
-        cells: [{ x: 11, y: 5 }, { x: 15, y: 5 }],
-        exitDir: "left"
-      },
-      {
-        id: "tr_block",
-        cells: [{ x: 14, y: 4 }, { x: 14, y: 11 }],
-        exitDir: "up"
-      },
-      {
-        id: "br_1",
-        cells: [{ x: 11, y: 15 }, { x: 17, y: 15 }],
-        exitDir: "left"
-      },
-      {
-        id: "br_block",
-        cells: [{ x: 7, y: 14 }, { x: 12, y: 14 }],
+        id: "kb2",
+        cells: [{ x: 5, y: 6 }, { x: 9, y: 6 }],
         exitDir: "right"
+      },
+      {
+        id: "kb3",
+        cells: [{ x: 10, y: 5 }, { x: 10, y: 7 }],
+        exitDir: "up"
+      },
+      {
+        id: "kb4",
+        cells: [{ x: 12, y: 2 }, { x: 9, y: 2 }],
+        exitDir: "left"
+      },
+      {
+        id: "kb5",
+        cells: [{ x: 7, y: 2 }, { x: 7, y: 0 }],
+        exitDir: "up"
+      },
+      {
+        id: "br_h1",
+        cells: [{ x: 12, y: 12 }, { x: 15, y: 12 }],
+        exitDir: "right"
+      },
+      {
+        id: "br_v1",
+        cells: [{ x: 16, y: 10 }, { x: 16, y: 14 }],
+        exitDir: "down"
+      },
+      {
+        id: "br_h2",
+        cells: [{ x: 17, y: 15 }, { x: 14, y: 15 }],
+        exitDir: "left"
+      },
+      {
+        id: "br_v2",
+        cells: [{ x: 13, y: 16 }, { x: 13, y: 13 }],
+        exitDir: "up"
       }
     ]
   }

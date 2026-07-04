@@ -45,6 +45,19 @@ function App() {
 
   useEffect(() => {
     fetchUser();
+
+    const handlePopState = (event) => {
+      if (event.state && event.state.view) {
+        setCurrentView(event.state.view);
+      } else {
+        setCurrentView('dashboard');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
   }, []);
 
   const handleAuthSuccess = () => {
@@ -62,6 +75,7 @@ function App() {
   const handleSelectLevel = (levelId) => {
     setSelectedLevelId(levelId);
     setCurrentView('game');
+    window.history.pushState({ view: 'game' }, '');
   };
 
   const handleProgressSaved = (data) => {
@@ -75,7 +89,12 @@ function App() {
 
   const toggleCreatorMode = () => {
     playClick();
-    setCurrentView(currentView === 'creator' ? 'dashboard' : 'creator');
+    if (currentView === 'creator') {
+      window.history.back();
+    } else {
+      setCurrentView('creator');
+      window.history.pushState({ view: 'creator' }, '');
+    }
   };
 
   if (loading) {
@@ -92,7 +111,7 @@ function App() {
     <>
       {currentView !== 'creator' && (
         <header className="app-header">
-          <div className="logo" onClick={() => { playClick(); setCurrentView('dashboard'); }} style={{ cursor: 'pointer' }}>
+          <div className="logo" onClick={() => { playClick(); if (currentView !== 'dashboard') window.history.back(); }} style={{ cursor: 'pointer' }}>
             <Gamepad2 className="logo-icon" size={26} />
             <span>ARROW MAZE</span>
           </div>
@@ -127,13 +146,13 @@ function App() {
             {currentView === 'game' && (
               <GameBoard
                 levelId={selectedLevelId}
-                onBack={() => { playClick(); setCurrentView('dashboard'); }}
+                onBack={() => { playClick(); window.history.back(); }}
                 onProgressSaved={handleProgressSaved}
                 onToggleCreatorMode={toggleCreatorMode}
               />
             )}
             {currentView === 'creator' && (
-              <CreatorMode onExit={() => { playClick(); setCurrentView('dashboard'); }} />
+              <CreatorMode onExit={() => { playClick(); window.history.back(); }} />
             )}
           </>
         )}
