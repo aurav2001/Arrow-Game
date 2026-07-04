@@ -1,911 +1,4832 @@
-// 20x20 Grid levels for the Tap Away dense maze clone.
-// Each shape contains:
-// - id: unique ID
-// - cells: array of grid coordinates [{ x, y }] occupied by this shape (0-19 range)
-// - exitDir: 'up' | 'down' | 'left' | 'right' (direction it slides out)
-
+// Generated dense logic mazes
 export const levels = [
   {
-    id: 1,
-    name: "Dense Maze (image_5)",
-    gridSize: 20,
-    shapes: [
-      // --- Top Left Zone ---
+    "id": 1,
+    "name": "Vector Basics",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "tl1",
-        cells: [
-          { x: 0, y: 4 }, { x: 0, y: 3 }, { x: 0, y: 2 }, { x: 0, y: 1 }, { x: 0, y: 0 },
-          { x: 1, y: 0 }, { x: 1, y: 1 }, { x: 1, y: 2 }, { x: 2, y: 2 }, { x: 2, y: 1 },
-          { x: 2, y: 0 }
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 14,
+            "y": 4
+          },
+          {
+            "x": 17,
+            "y": 4
+          }
         ],
-        exitDir: "up"
+        "exitDir": "right"
       },
       {
-        id: "tl2",
-        cells: [
-          { x: 3, y: 3 }, { x: 3, y: 2 }, { x: 3, y: 1 }, { x: 3, y: 0 },
-          { x: 4, y: 0 }, { x: 4, y: 1 }, { x: 4, y: 2 }, { x: 5, y: 2 },
-          { x: 5, y: 1 }, { x: 5, y: 0 }
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 9,
+            "y": 8
+          },
+          {
+            "x": 12,
+            "y": 8
+          }
         ],
-        exitDir: "up"
+        "exitDir": "right"
       },
       {
-        id: "tl3",
-        cells: [
-          { x: 2, y: 3 }, { x: 1, y: 3 }, { x: 1, y: 4 }, { x: 2, y: 4 },
-          { x: 2, y: 5 }, { x: 1, y: 5 }, { x: 1, y: 6 }, { x: 0, y: 6 }
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 11,
+            "y": 4
+          }
         ],
-        exitDir: "left"
+        "exitDir": "right"
       },
       {
-        id: "tl4",
-        cells: [
-          { x: 6, y: 0 }, { x: 6, y: 1 }, { x: 6, y: 2 }, { x: 5, y: 2 },
-          { x: 5, y: 3 }, { x: 6, y: 3 }
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 9
+          }
         ],
-        exitDir: "right"
+        "exitDir": "down"
       },
       {
-        id: "tl5",
-        cells: [
-          { x: 4, y: 4 }, { x: 4, y: 5 }, { x: 5, y: 5 }, { x: 5, y: 4 },
-          { x: 6, y: 4 }
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 8,
+            "y": 14
+          },
+          {
+            "x": 8,
+            "y": 17
+          }
         ],
-        exitDir: "right"
+        "exitDir": "down"
       },
       {
-        id: "tl6",
-        cells: [
-          { x: 3, y: 5 }, { x: 3, y: 6 }, { x: 3, y: 7 }, { x: 2, y: 7 },
-          { x: 2, y: 8 }, { x: 1, y: 8 }, { x: 1, y: 7 }, { x: 0, y: 7 }
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 6
+          }
         ],
-        exitDir: "left"
+        "exitDir": "right"
       },
       {
-        id: "tl7",
-        cells: [
-          { x: 4, y: 7 }, { x: 4, y: 8 }, { x: 3, y: 8 }, { x: 3, y: 9 },
-          { x: 2, y: 9 }, { x: 1, y: 9 }, { x: 1, y: 10 }, { x: 0, y: 10 }
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          }
         ],
-        exitDir: "left"
-      },
-
-      // --- Top Middle / Top Right Zone ---
-      {
-        id: "tm1",
-        cells: [
-          { x: 7, y: 3 }, { x: 7, y: 2 }, { x: 7, y: 1 }, { x: 7, y: 0 }
-        ],
-        exitDir: "up"
+        "exitDir": "right"
       },
       {
-        id: "tm2",
-        cells: [
-          { x: 8, y: 2 }, { x: 8, y: 1 }, { x: 10, y: 1 }, { x: 10, y: 0 },
-          { x: 11, y: 0 }
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 17,
+            "y": 14
+          },
+          {
+            "x": 17,
+            "y": 11
+          }
         ],
-        exitDir: "right"
+        "exitDir": "up"
       },
       {
-        id: "tm3",
-        cells: [
-          { x: 8, y: 3 }, { x: 9, y: 3 }, { x: 9, y: 2 }, { x: 10, y: 2 },
-          { x: 11, y: 2 }, { x: 11, y: 1 }, { x: 12, y: 1 }, { x: 12, y: 0 }
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 14,
+            "y": 3
+          },
+          {
+            "x": 14,
+            "y": 0
+          }
         ],
-        exitDir: "up"
+        "exitDir": "up"
       },
       {
-        id: "tr1",
-        cells: [
-          { x: 13, y: 3 }, { x: 13, y: 2 }, { x: 13, y: 1 }, { x: 13, y: 0 }
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 7,
+            "y": 9
+          },
+          {
+            "x": 9,
+            "y": 9
+          }
         ],
-        exitDir: "up"
+        "exitDir": "right"
       },
       {
-        id: "tr2",
-        cells: [
-          { x: 14, y: 3 }, { x: 14, y: 2 }, { x: 14, y: 1 }, { x: 14, y: 0 },
-          { x: 15, y: 0 }, { x: 15, y: 1 }, { x: 16, y: 1 }, { x: 16, y: 0 },
-          { x: 17, y: 0 }
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 13,
+            "y": 7
+          },
+          {
+            "x": 10,
+            "y": 7
+          }
         ],
-        exitDir: "right"
+        "exitDir": "left"
       },
       {
-        id: "tr3",
-        cells: [
-          { x: 15, y: 3 }, { x: 15, y: 2 }, { x: 16, y: 2 }, { x: 17, y: 2 },
-          { x: 17, y: 1 }, { x: 18, y: 1 }, { x: 18, y: 0 }, { x: 19, y: 0 }
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 0,
+            "y": 12
+          }
         ],
-        exitDir: "right"
+        "exitDir": "left"
       },
       {
-        id: "tr4",
-        cells: [
-          { x: 18, y: 3 }, { x: 19, y: 3 }, { x: 19, y: 2 }, { x: 18, y: 2 },
-          { x: 18, y: 1 }, { x: 19, y: 1 }
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 5,
+            "y": 18
+          },
+          {
+            "x": 5,
+            "y": 15
+          }
         ],
-        exitDir: "right"
+        "exitDir": "up"
       },
       {
-        id: "tr5",
-        cells: [
-          { x: 14, y: 4 }, { x: 15, y: 4 }, { x: 15, y: 5 }, { x: 14, y: 5 },
-          { x: 14, y: 6 }
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 2,
+            "y": 16
+          },
+          {
+            "x": 0,
+            "y": 16
+          }
         ],
-        exitDir: "left"
+        "exitDir": "left"
       },
       {
-        id: "tr6",
-        cells: [
-          { x: 17, y: 4 }, { x: 18, y: 4 }, { x: 18, y: 5 }, { x: 17, y: 5 },
-          { x: 17, y: 6 }, { x: 19, y: 6 }
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 2
+          }
         ],
-        exitDir: "right"
-      },
-
-      // --- Middle Vertical Capsules ---
-      {
-        id: "c1",
-        cells: [
-          { x: 8, y: 4 }, { x: 8, y: 5 }, { x: 8, y: 6 }, { x: 8, y: 7 }, { x: 8, y: 8 },
-          { x: 9, y: 8 }, { x: 9, y: 7 }, { x: 9, y: 6 }, { x: 9, y: 5 }, { x: 9, y: 4 }
-        ],
-        exitDir: "up"
+        "exitDir": "up"
       },
       {
-        id: "c2",
-        cells: [
-          { x: 10, y: 4 }, { x: 10, y: 5 }, { x: 10, y: 6 }, { x: 10, y: 7 }, { x: 10, y: 8 },
-          { x: 11, y: 8 }, { x: 11, y: 7 }, { x: 11, y: 6 }, { x: 11, y: 5 }, { x: 11, y: 4 }
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 10,
+            "y": 12
+          },
+          {
+            "x": 10,
+            "y": 14
+          }
         ],
-        exitDir: "up"
-      },
-
-      // --- Middle Horizontal Long Lines ---
-      {
-        id: "mh1",
-        cells: [
-          { x: 19, y: 9 }, { x: 18, y: 9 }, { x: 17, y: 9 }, { x: 16, y: 9 }, { x: 15, y: 9 },
-          { x: 14, y: 9 }, { x: 13, y: 9 }, { x: 12, y: 9 }, { x: 11, y: 9 }, { x: 10, y: 9 },
-          { x: 9, y: 9 }, { x: 8, y: 9 }, { x: 7, y: 9 }, { x: 6, y: 9 }, { x: 5, y: 9 },
-          { x: 4, y: 9 }, { x: 3, y: 9 }, { x: 2, y: 9 }, { x: 1, y: 9 }, { x: 0, y: 9 },
-          { x: 0, y: 10 }, { x: 0, y: 11 }
-        ],
-        exitDir: "down"
+        "exitDir": "down"
       },
       {
-        id: "mh2",
-        cells: [
-          { x: 1, y: 10 }, { x: 2, y: 10 }, { x: 3, y: 10 }, { x: 4, y: 10 }, { x: 5, y: 10 },
-          { x: 6, y: 10 }, { x: 7, y: 10 }, { x: 8, y: 10 }, { x: 9, y: 10 }, { x: 10, y: 10 },
-          { x: 11, y: 10 }, { x: 12, y: 10 }, { x: 13, y: 10 }, { x: 14, y: 10 }, { x: 15, y: 10 },
-          { x: 16, y: 10 }, { x: 17, y: 10 }
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 15,
+            "y": 15
+          },
+          {
+            "x": 13,
+            "y": 15
+          }
         ],
-        exitDir: "right"
+        "exitDir": "left"
       },
       {
-        id: "mh3",
-        cells: [
-          { x: 19, y: 10 }, { x: 19, y: 11 }, { x: 18, y: 11 }, { x: 17, y: 11 }, { x: 16, y: 11 },
-          { x: 15, y: 11 }, { x: 14, y: 11 }, { x: 13, y: 11 }, { x: 12, y: 11 }, { x: 11, y: 11 },
-          { x: 10, y: 11 }, { x: 9, y: 11 }, { x: 8, y: 11 }, { x: 7, y: 11 }, { x: 6, y: 11 },
-          { x: 5, y: 11 }, { x: 4, y: 11 }, { x: 3, y: 11 }, { x: 2, y: 11 }, { x: 1, y: 11 }
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 7,
+            "y": 11
+          },
+          {
+            "x": 4,
+            "y": 11
+          }
         ],
-        exitDir: "left"
-      },
-
-      // --- Bottom Left Zone ---
-      {
-        id: "bl1",
-        cells: [
-          { x: 0, y: 13 }, { x: 0, y: 14 }, { x: 0, y: 15 }, { x: 1, y: 15 },
-          { x: 1, y: 14 }, { x: 2, y: 14 }, { x: 2, y: 13 }, { x: 3, y: 13 }
-        ],
-        exitDir: "right"
+        "exitDir": "left"
       },
       {
-        id: "bl2",
-        cells: [
-          { x: 4, y: 13 }, { x: 4, y: 14 }, { x: 3, y: 14 }, { x: 3, y: 15 },
-          { x: 2, y: 15 }, { x: 2, y: 16 }, { x: 1, y: 16 }, { x: 0, y: 16 }
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 14,
+            "y": 10
+          },
+          {
+            "x": 14,
+            "y": 13
+          }
         ],
-        exitDir: "left"
+        "exitDir": "down"
       },
       {
-        id: "bl3",
-        cells: [
-          { x: 0, y: 18 }, { x: 0, y: 17 }, { x: 1, y: 17 }, { x: 2, y: 17 },
-          { x: 2, y: 18 }, { x: 1, y: 18 }, { x: 1, y: 19 }, { x: 0, y: 19 }
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 12,
+            "y": 19
+          },
+          {
+            "x": 16,
+            "y": 19
+          }
         ],
-        exitDir: "down"
+        "exitDir": "right"
       },
       {
-        id: "bl4",
-        cells: [
-          { x: 3, y: 17 }, { x: 3, y: 18 }, { x: 4, y: 18 }, { x: 4, y: 17 },
-          { x: 5, y: 17 }, { x: 5, y: 19 }
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 16,
+            "y": 10
+          },
+          {
+            "x": 16,
+            "y": 13
+          }
         ],
-        exitDir: "down"
-      },
-
-      // --- Bottom Middle Zone ---
-      {
-        id: "bm1",
-        cells: [
-          { x: 7, y: 13 }, { x: 11, y: 13 }, { x: 11, y: 14 }, { x: 8, y: 14 },
-          { x: 8, y: 15 }, { x: 10, y: 15 }
-        ],
-        exitDir: "right"
+        "exitDir": "down"
       },
       {
-        id: "bm2",
-        cells: [
-          { x: 7, y: 16 }, { x: 7, y: 19 }
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 4,
+            "y": 14
+          },
+          {
+            "x": 4,
+            "y": 18
+          }
         ],
-        exitDir: "down"
+        "exitDir": "down"
       },
       {
-        id: "bm3",
-        cells: [
-          { x: 9, y: 16 }, { x: 9, y: 19 }
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 3,
+            "y": 15
+          },
+          {
+            "x": 3,
+            "y": 18
+          }
         ],
-        exitDir: "down"
+        "exitDir": "down"
       },
       {
-        id: "bm4",
-        cells: [
-          { x: 11, y: 16 }, { x: 11, y: 19 }
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 15,
+            "y": 16
+          },
+          {
+            "x": 11,
+            "y": 16
+          }
         ],
-        exitDir: "down"
-      },
-
-      // --- Bottom Right Zone ---
-      {
-        id: "br1",
-        cells: [
-          { x: 13, y: 13 }, { x: 13, y: 14 }, { x: 14, y: 14 }, { x: 14, y: 13 },
-          { x: 15, y: 13 }, { x: 16, y: 13 }, { x: 16, y: 14 }, { x: 15, y: 14 },
-          { x: 15, y: 15 }, { x: 17, y: 15 }
-        ],
-        exitDir: "right"
+        "exitDir": "left"
       },
       {
-        id: "br2",
-        cells: [
-          { x: 13, y: 16 }, { x: 14, y: 16 }, { x: 14, y: 17 }, { x: 13, y: 17 },
-          { x: 13, y: 18 }, { x: 15, y: 18 }, { x: 15, y: 17 }, { x: 16, y: 17 },
-          { x: 16, y: 16 }, { x: 18, y: 16 }
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 6,
+            "y": 18
+          },
+          {
+            "x": 6,
+            "y": 15
+          }
         ],
-        exitDir: "right"
+        "exitDir": "up"
       },
       {
-        id: "br3",
-        cells: [
-          { x: 19, y: 14 }, { x: 19, y: 17 }, { x: 18, y: 17 }, { x: 18, y: 18 },
-          { x: 19, y: 18 }, { x: 19, y: 19 }
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 6,
+            "y": 6
+          }
         ],
-        exitDir: "down"
+        "exitDir": "up"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 0,
+            "y": 11
+          },
+          {
+            "x": 0,
+            "y": 9
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 16,
+            "y": 16
+          },
+          {
+            "x": 18,
+            "y": 16
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 15,
+            "y": 8
+          },
+          {
+            "x": 18,
+            "y": 8
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 18,
+            "y": 4
+          },
+          {
+            "x": 18,
+            "y": 7
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 15,
+            "y": 5
+          },
+          {
+            "x": 13,
+            "y": 5
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 8,
+            "y": 11
+          },
+          {
+            "x": 10,
+            "y": 11
+          }
+        ],
+        "exitDir": "right"
       }
     ]
   },
   {
-    id: 2,
-    name: "Intricate Labyrinth",
-    gridSize: 20,
-    shapes: [
-      // Chain A
+    "id": 2,
+    "name": "Intricate Labyrinth",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "a1",
-        cells: [{ x: 1, y: 10 }, { x: 1, y: 5 }],
-        exitDir: "up"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 7
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "a2",
-        cells: [{ x: 0, y: 11 }, { x: 5, y: 11 }],
-        exitDir: "right"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 7,
+            "y": 18
+          },
+          {
+            "x": 10,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "a3",
-        cells: [{ x: 6, y: 12 }, { x: 6, y: 4 }],
-        exitDir: "up"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 8,
+            "y": 6
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "a4",
-        cells: [{ x: 7, y: 3 }, { x: 2, y: 3 }],
-        exitDir: "left"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 4,
+            "y": 15
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "a5",
-        cells: [{ x: 1, y: 0 }, { x: 1, y: 4 }],
-        exitDir: "down"
-      },
-      // Chain B
-      {
-        id: "b1",
-        cells: [{ x: 18, y: 1 }, { x: 18, y: 10 }],
-        exitDir: "down"
-      },
-      {
-        id: "b2",
-        cells: [{ x: 19, y: 11 }, { x: 14, y: 11 }],
-        exitDir: "left"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "b3",
-        cells: [{ x: 13, y: 12 }, { x: 13, y: 4 }],
-        exitDir: "up"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 13,
+            "y": 14
+          },
+          {
+            "x": 16,
+            "y": 14
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "b4",
-        cells: [{ x: 12, y: 3 }, { x: 17, y: 3 }],
-        exitDir: "right"
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 8,
+            "y": 8
+          },
+          {
+            "x": 4,
+            "y": 8
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "b5",
-        cells: [{ x: 18, y: 0 }, { x: 18, y: 4 }],
-        exitDir: "down"
-      },
-      // Chain C
-      {
-        id: "c1",
-        cells: [{ x: 2, y: 18 }, { x: 10, y: 18 }],
-        exitDir: "right"
-      },
-      {
-        id: "c2",
-        cells: [{ x: 11, y: 19 }, { x: 11, y: 14 }],
-        exitDir: "up"
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 16,
+            "y": 3
+          },
+          {
+            "x": 16,
+            "y": 6
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "c3",
-        cells: [{ x: 12, y: 13 }, { x: 7, y: 13 }],
-        exitDir: "left"
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "c4",
-        cells: [{ x: 6, y: 13 }, { x: 6, y: 17 }],
-        exitDir: "down"
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 10,
+            "y": 9
+          },
+          {
+            "x": 10,
+            "y": 11
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "c5",
-        cells: [{ x: 10, y: 19 }, { x: 0, y: 19 }],
-        exitDir: "left"
-      },
-      // Chain D
-      {
-        id: "d1",
-        cells: [{ x: 17, y: 18 }, { x: 13, y: 18 }],
-        exitDir: "left"
-      },
-      {
-        id: "d2",
-        cells: [{ x: 12, y: 19 }, { x: 12, y: 15 }],
-        exitDir: "up"
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "d3",
-        cells: [{ x: 11, y: 14 }, { x: 16, y: 14 }],
-        exitDir: "right"
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 12,
+            "y": 18
+          },
+          {
+            "x": 16,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "d4",
-        cells: [{ x: 17, y: 13 }, { x: 17, y: 17 }],
-        exitDir: "down"
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 6,
+            "y": 15
+          },
+          {
+            "x": 8,
+            "y": 15
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "d5",
-        cells: [{ x: 13, y: 19 }, { x: 19, y: 19 }],
-        exitDir: "right"
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 19,
+            "y": 18
+          },
+          {
+            "x": 19,
+            "y": 14
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 16,
+            "y": 15
+          },
+          {
+            "x": 16,
+            "y": 17
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 9,
+            "y": 16
+          },
+          {
+            "x": 9,
+            "y": 14
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 17,
+            "y": 12
+          },
+          {
+            "x": 13,
+            "y": 12
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 15,
+            "y": 9
+          },
+          {
+            "x": 12,
+            "y": 9
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 0,
+            "y": 16
+          },
+          {
+            "x": 0,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 1,
+            "y": 11
+          },
+          {
+            "x": 3,
+            "y": 11
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 9,
+            "y": 9
+          },
+          {
+            "x": 9,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 5,
+            "y": 14
+          },
+          {
+            "x": 8,
+            "y": 14
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 1,
+            "y": 14
+          },
+          {
+            "x": 3,
+            "y": 14
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 10,
+            "y": 14
+          },
+          {
+            "x": 10,
+            "y": 16
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 11,
+            "y": 3
+          },
+          {
+            "x": 11,
+            "y": 1
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 18,
+            "y": 11
+          },
+          {
+            "x": 18,
+            "y": 15
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 8,
+            "y": 13
+          },
+          {
+            "x": 6,
+            "y": 13
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 3,
+            "y": 8
+          },
+          {
+            "x": 3,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 15,
+            "y": 3
+          },
+          {
+            "x": 15,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 18,
+            "y": 8
+          },
+          {
+            "x": 18,
+            "y": 6
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 11,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 12,
+            "y": 17
+          },
+          {
+            "x": 12,
+            "y": 15
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 6,
+            "y": 11
+          },
+          {
+            "x": 8,
+            "y": 11
+          }
+        ],
+        "exitDir": "right"
       }
     ]
   },
   {
-    id: 3,
-    name: "The Pinwheel Lock",
-    gridSize: 20,
-    shapes: [
-      // Inner Pinwheel
+    "id": 3,
+    "name": "The Pinwheel Lock",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "ip1",
-        cells: [{ x: 8, y: 8 }, { x: 11, y: 8 }],
-        exitDir: "right"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 1,
+            "y": 14
+          },
+          {
+            "x": 1,
+            "y": 11
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "ip2",
-        cells: [{ x: 12, y: 8 }, { x: 12, y: 11 }],
-        exitDir: "down"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 7,
+            "y": 18
+          },
+          {
+            "x": 9,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "ip3",
-        cells: [{ x: 12, y: 12 }, { x: 9, y: 12 }],
-        exitDir: "left"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 17,
+            "y": 8
+          },
+          {
+            "x": 17,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "ip4",
-        cells: [{ x: 8, y: 12 }, { x: 8, y: 9 }],
-        exitDir: "up"
-      },
-      // Middle Pinwheel
-      {
-        id: "mp1",
-        cells: [{ x: 6, y: 6 }, { x: 13, y: 6 }],
-        exitDir: "right"
-      },
-      {
-        id: "mp2",
-        cells: [{ x: 14, y: 6 }, { x: 14, y: 13 }],
-        exitDir: "down"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 16,
+            "y": 3
+          },
+          {
+            "x": 18,
+            "y": 3
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "mp3",
-        cells: [{ x: 14, y: 14 }, { x: 7, y: 14 }],
-        exitDir: "left"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 6,
+            "y": 8
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "mp4",
-        cells: [{ x: 6, y: 14 }, { x: 6, y: 7 }],
-        exitDir: "up"
-      },
-      // Outer Pinwheel
-      {
-        id: "op1",
-        cells: [{ x: 4, y: 4 }, { x: 13, y: 4 }],
-        exitDir: "right"
-      },
-      {
-        id: "op2",
-        cells: [{ x: 16, y: 5 }, { x: 16, y: 15 }],
-        exitDir: "down"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 8,
+            "y": 17
+          },
+          {
+            "x": 8,
+            "y": 15
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "op3",
-        cells: [{ x: 16, y: 16 }, { x: 5, y: 16 }],
-        exitDir: "left"
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 11,
+            "y": 12
+          },
+          {
+            "x": 15,
+            "y": 12
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "op4",
-        cells: [{ x: 4, y: 16 }, { x: 4, y: 5 }],
-        exitDir: "up"
-      },
-      // Keys
-      {
-        id: "k1",
-        cells: [{ x: 15, y: 5 }, { x: 15, y: 3 }],
-        exitDir: "up"
-      },
-      {
-        id: "k2",
-        cells: [{ x: 14, y: 1 }, { x: 16, y: 1 }],
-        exitDir: "right"
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 7,
+            "y": 10
+          },
+          {
+            "x": 11,
+            "y": 10
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "k3",
-        cells: [{ x: 18, y: 2 }, { x: 18, y: 0 }],
-        exitDir: "up"
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 10,
+            "y": 15
+          },
+          {
+            "x": 10,
+            "y": 17
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 7
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 6,
+            "y": 9
+          },
+          {
+            "x": 4,
+            "y": 9
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 10,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 5
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 11,
+            "y": 8
+          },
+          {
+            "x": 11,
+            "y": 6
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 16,
+            "y": 7
+          },
+          {
+            "x": 16,
+            "y": 10
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 6,
+            "y": 14
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 16,
+            "y": 19
+          },
+          {
+            "x": 14,
+            "y": 19
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 0,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 10
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 10,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 8
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 14,
+            "y": 14
+          },
+          {
+            "x": 14,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 5,
+            "y": 12
+          },
+          {
+            "x": 3,
+            "y": 12
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 17,
+            "y": 1
+          },
+          {
+            "x": 14,
+            "y": 1
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 2,
+            "y": 18
+          },
+          {
+            "x": 2,
+            "y": 14
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 14,
+            "y": 7
+          },
+          {
+            "x": 14,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 8,
+            "y": 14
+          },
+          {
+            "x": 12,
+            "y": 14
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 11,
+            "y": 2
+          },
+          {
+            "x": 11,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 13,
+            "y": 11
+          },
+          {
+            "x": 11,
+            "y": 11
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 1,
+            "y": 16
+          },
+          {
+            "x": 1,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 12,
+            "y": 15
+          },
+          {
+            "x": 12,
+            "y": 17
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 5,
+            "y": 17
+          },
+          {
+            "x": 5,
+            "y": 15
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 14,
+            "y": 8
+          },
+          {
+            "x": 14,
+            "y": 11
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 0,
+            "y": 15
+          },
+          {
+            "x": 0,
+            "y": 17
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 12,
+            "y": 0
+          },
+          {
+            "x": 15,
+            "y": 0
+          }
+        ],
+        "exitDir": "right"
       }
     ]
   },
   {
-    id: 4,
-    name: "Cybernetic Keyhole",
-    gridSize: 20,
-    shapes: [
+    "id": 4,
+    "name": "Cybernetic Keyhole",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "key",
-        cells: [{ x: 1, y: 10 }, { x: 12, y: 10 }],
-        exitDir: "right"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 9,
+            "y": 7
+          },
+          {
+            "x": 9,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "g1",
-        cells: [{ x: 14, y: 7 }, { x: 14, y: 11 }],
-        exitDir: "down"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 16,
+            "y": 17
+          },
+          {
+            "x": 12,
+            "y": 17
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "g2",
-        cells: [{ x: 16, y: 13 }, { x: 16, y: 9 }],
-        exitDir: "up"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 11,
+            "y": 15
+          },
+          {
+            "x": 15,
+            "y": 15
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "g3",
-        cells: [{ x: 18, y: 7 }, { x: 18, y: 11 }],
-        exitDir: "down"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 5,
+            "y": 13
+          },
+          {
+            "x": 9,
+            "y": 13
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "h1",
-        cells: [{ x: 15, y: 12 }, { x: 12, y: 12 }],
-        exitDir: "left"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 7,
+            "y": 12
+          },
+          {
+            "x": 11,
+            "y": 12
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "v1",
-        cells: [{ x: 10, y: 11 }, { x: 10, y: 14 }],
-        exitDir: "down"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 2,
+            "y": 14
+          },
+          {
+            "x": 2,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "h2",
-        cells: [{ x: 11, y: 15 }, { x: 8, y: 15 }],
-        exitDir: "left"
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 6,
+            "y": 8
+          },
+          {
+            "x": 10,
+            "y": 8
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "h3",
-        cells: [{ x: 15, y: 8 }, { x: 17, y: 8 }],
-        exitDir: "right"
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 13,
+            "y": 5
+          },
+          {
+            "x": 13,
+            "y": 1
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "v2",
-        cells: [{ x: 19, y: 9 }, { x: 19, y: 6 }],
-        exitDir: "up"
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "h4",
-        cells: [{ x: 17, y: 12 }, { x: 19, y: 12 }],
-        exitDir: "right"
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 16,
+            "y": 11
+          },
+          {
+            "x": 16,
+            "y": 9
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 12,
+            "y": 5
+          },
+          {
+            "x": 12,
+            "y": 8
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 8
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 14,
+            "y": 10
+          },
+          {
+            "x": 10,
+            "y": 10
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 5,
+            "y": 12
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 19,
+            "y": 10
+          },
+          {
+            "x": 19,
+            "y": 12
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 10,
+            "y": 14
+          },
+          {
+            "x": 14,
+            "y": 14
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 9,
+            "y": 16
+          },
+          {
+            "x": 7,
+            "y": 16
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 3,
+            "y": 9
+          },
+          {
+            "x": 3,
+            "y": 7
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 12,
+            "y": 11
+          },
+          {
+            "x": 8,
+            "y": 11
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 0,
+            "y": 13
+          },
+          {
+            "x": 0,
+            "y": 16
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 5,
+            "y": 17
+          },
+          {
+            "x": 3,
+            "y": 17
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 10
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 9,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 17,
+            "y": 6
+          },
+          {
+            "x": 17,
+            "y": 4
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 10,
+            "y": 17
+          },
+          {
+            "x": 7,
+            "y": 17
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 9,
+            "y": 18
+          },
+          {
+            "x": 12,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 16,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 11,
+            "y": 16
+          },
+          {
+            "x": 13,
+            "y": 16
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 11,
+            "y": 19
+          },
+          {
+            "x": 15,
+            "y": 19
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 15,
+            "y": 9
+          },
+          {
+            "x": 15,
+            "y": 7
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 13,
+            "y": 11
+          },
+          {
+            "x": 13,
+            "y": 13
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 9,
+            "y": 4
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 19,
+            "y": 0
+          },
+          {
+            "x": 19,
+            "y": 2
+          }
+        ],
+        "exitDir": "down"
       }
     ]
   },
   {
-    id: 5,
-    name: "Gridlock Megacity",
-    gridSize: 20,
-    shapes: [
+    "id": 5,
+    "name": "Gridlock Megacity",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "hr1",
-        cells: [{ x: 3, y: 4 }, { x: 6, y: 4 }],
-        exitDir: "right"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 19,
+            "y": 10
+          },
+          {
+            "x": 19,
+            "y": 7
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "vc1",
-        cells: [{ x: 7, y: 3 }, { x: 7, y: 6 }],
-        exitDir: "down"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "hr2",
-        cells: [{ x: 6, y: 8 }, { x: 10, y: 8 }],
-        exitDir: "right"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 16,
+            "y": 11
+          },
+          {
+            "x": 16,
+            "y": 14
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "vc2",
-        cells: [{ x: 11, y: 7 }, { x: 11, y: 10 }],
-        exitDir: "down"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 6,
+            "y": 18
+          },
+          {
+            "x": 8,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "hr3",
-        cells: [{ x: 11, y: 12 }, { x: 14, y: 12 }],
-        exitDir: "right"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 5
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "vc3",
-        cells: [{ x: 15, y: 11 }, { x: 15, y: 14 }],
-        exitDir: "down"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 8,
+            "y": 14
+          },
+          {
+            "x": 12,
+            "y": 14
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "vu1",
-        cells: [{ x: 14, y: 5 }, { x: 14, y: 3 }],
-        exitDir: "up"
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 13,
+            "y": 5
+          },
+          {
+            "x": 17,
+            "y": 5
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "hl1",
-        cells: [{ x: 18, y: 6 }, { x: 14, y: 6 }],
-        exitDir: "left"
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 10
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "vu2",
-        cells: [{ x: 13, y: 9 }, { x: 13, y: 6 }],
-        exitDir: "up"
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 9,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "hl2",
-        cells: [{ x: 17, y: 5 }, { x: 13, y: 5 }],
-        exitDir: "left"
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 10,
+            "y": 10
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "vu3",
-        cells: [{ x: 8, y: 7 }, { x: 8, y: 5 }],
-        exitDir: "up"
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 19,
+            "y": 2
+          },
+          {
+            "x": 19,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "hl3",
-        cells: [{ x: 12, y: 2 }, { x: 8, y: 2 }],
-        exitDir: "left"
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 14,
+            "y": 12
+          },
+          {
+            "x": 14,
+            "y": 9
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 12,
+            "y": 3
+          },
+          {
+            "x": 8,
+            "y": 3
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 13,
+            "y": 12
+          },
+          {
+            "x": 13,
+            "y": 10
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 9,
+            "y": 19
+          },
+          {
+            "x": 13,
+            "y": 19
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 6,
+            "y": 16
+          },
+          {
+            "x": 2,
+            "y": 16
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 0,
+            "y": 15
+          },
+          {
+            "x": 2,
+            "y": 15
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 9,
+            "y": 13
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 14,
+            "y": 16
+          },
+          {
+            "x": 14,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 7
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 4,
+            "y": 8
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 11,
+            "y": 9
+          },
+          {
+            "x": 11,
+            "y": 11
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 15,
+            "y": 15
+          },
+          {
+            "x": 15,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 16,
+            "y": 19
+          },
+          {
+            "x": 18,
+            "y": 19
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 6
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 10
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 12,
+            "y": 2
+          },
+          {
+            "x": 12,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 16,
+            "y": 2
+          },
+          {
+            "x": 16,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 7
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 19,
+            "y": 17
+          },
+          {
+            "x": 19,
+            "y": 14
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 4,
+            "y": 13
+          },
+          {
+            "x": 1,
+            "y": 13
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 18,
+            "y": 4
+          },
+          {
+            "x": 14,
+            "y": 4
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 18,
+            "y": 9
+          },
+          {
+            "x": 18,
+            "y": 7
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 15,
+            "y": 8
+          },
+          {
+            "x": 15,
+            "y": 10
+          }
+        ],
+        "exitDir": "down"
       }
     ]
   },
   {
-    id: 6,
-    name: "Spiral Lockout",
-    gridSize: 20,
-    shapes: [
+    "id": 6,
+    "name": "Spiral Lockout",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "sp1",
-        cells: [{ x: 3, y: 2 }, { x: 17, y: 2 }],
-        exitDir: "right"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 15,
+            "y": 3
+          },
+          {
+            "x": 15,
+            "y": 7
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "sp2",
-        cells: [{ x: 18, y: 2 }, { x: 18, y: 17 }],
-        exitDir: "down"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 9,
+            "y": 15
+          },
+          {
+            "x": 6,
+            "y": 15
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "sp3",
-        cells: [{ x: 18, y: 18 }, { x: 2, y: 18 }],
-        exitDir: "left"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 8,
+            "y": 6
+          },
+          {
+            "x": 8,
+            "y": 9
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "sp4",
-        cells: [{ x: 1, y: 18 }, { x: 1, y: 4 }],
-        exitDir: "up"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 16,
+            "y": 17
+          },
+          {
+            "x": 16,
+            "y": 14
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "sp5",
-        cells: [{ x: 4, y: 4 }, { x: 15, y: 4 }],
-        exitDir: "right"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 6
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "sp6",
-        cells: [{ x: 16, y: 5 }, { x: 16, y: 15 }],
-        exitDir: "down"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 19,
+            "y": 12
+          },
+          {
+            "x": 19,
+            "y": 10
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "sp7",
-        cells: [{ x: 15, y: 16 }, { x: 4, y: 16 }],
-        exitDir: "left"
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 9,
+            "y": 11
+          },
+          {
+            "x": 9,
+            "y": 13
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "sp8",
-        cells: [{ x: 3, y: 16 }, { x: 3, y: 6 }],
-        exitDir: "up"
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 14,
+            "y": 11
+          },
+          {
+            "x": 14,
+            "y": 7
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "sp9",
-        cells: [{ x: 6, y: 6 }, { x: 13, y: 6 }],
-        exitDir: "right"
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 8,
+            "y": 14
+          },
+          {
+            "x": 11,
+            "y": 14
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "sp10",
-        cells: [{ x: 14, y: 5 }, { x: 14, y: 13 }],
-        exitDir: "down"
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 3
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "sp11",
-        cells: [{ x: 15, y: 14 }, { x: 6, y: 14 }],
-        exitDir: "left"
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 9,
+            "y": 4
+          },
+          {
+            "x": 9,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "sp12",
-        cells: [{ x: 5, y: 14 }, { x: 5, y: 8 }],
-        exitDir: "up"
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 4,
+            "y": 16
+          },
+          {
+            "x": 7,
+            "y": 16
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 0
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 10,
+            "y": 3
+          },
+          {
+            "x": 10,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 17,
+            "y": 2
+          },
+          {
+            "x": 17,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 18,
+            "y": 14
+          },
+          {
+            "x": 18,
+            "y": 10
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 4,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 9
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 7,
+            "y": 10
+          },
+          {
+            "x": 7,
+            "y": 7
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 13,
+            "y": 9
+          },
+          {
+            "x": 13,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 10,
+            "y": 15
+          },
+          {
+            "x": 14,
+            "y": 15
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 3,
+            "y": 15
+          },
+          {
+            "x": 3,
+            "y": 13
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 10,
+            "y": 17
+          },
+          {
+            "x": 7,
+            "y": 17
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 12,
+            "y": 5
+          },
+          {
+            "x": 12,
+            "y": 8
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 15,
+            "y": 2
+          },
+          {
+            "x": 11,
+            "y": 2
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 5,
+            "y": 19
+          },
+          {
+            "x": 1,
+            "y": 19
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 5,
+            "y": 18
+          },
+          {
+            "x": 2,
+            "y": 18
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 16,
+            "y": 7
+          },
+          {
+            "x": 16,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 12,
+            "y": 3
+          },
+          {
+            "x": 14,
+            "y": 3
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 0,
+            "y": 12
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 11,
+            "y": 4
+          },
+          {
+            "x": 11,
+            "y": 8
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 6,
+            "y": 18
+          },
+          {
+            "x": 9,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 10,
+            "y": 19
+          },
+          {
+            "x": 13,
+            "y": 19
+          }
+        ],
+        "exitDir": "right"
       }
     ]
   },
   {
-    id: 7,
-    name: "The Maze Switchback",
-    gridSize: 20,
-    shapes: [
+    "id": 7,
+    "name": "The Maze Switchback",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "sb1",
-        cells: [{ x: 1, y: 3 }, { x: 18, y: 3 }],
-        exitDir: "right"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 6,
+            "y": 2
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "v1",
-        cells: [{ x: 19, y: 5 }, { x: 19, y: 2 }],
-        exitDir: "up"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 17,
+            "y": 11
+          },
+          {
+            "x": 17,
+            "y": 15
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "h1",
-        cells: [{ x: 19, y: 1 }, { x: 10, y: 1 }],
-        exitDir: "left"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 10,
+            "y": 8
+          },
+          {
+            "x": 10,
+            "y": 12
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "v6",
-        cells: [{ x: 5, y: 3 }, { x: 5, y: 0 }],
-        exitDir: "up"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 15,
+            "y": 4
+          },
+          {
+            "x": 18,
+            "y": 4
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "sb2",
-        cells: [{ x: 18, y: 6 }, { x: 1, y: 6 }],
-        exitDir: "left"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "v2",
-        cells: [{ x: 0, y: 5 }, { x: 0, y: 8 }],
-        exitDir: "down"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 11,
+            "y": 4
+          },
+          {
+            "x": 11,
+            "y": 0
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "h2",
-        cells: [{ x: 0, y: 10 }, { x: 9, y: 10 }],
-        exitDir: "right"
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 6,
+            "y": 14
+          },
+          {
+            "x": 4,
+            "y": 14
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "v7",
-        cells: [{ x: 12, y: 10 }, { x: 12, y: 13 }],
-        exitDir: "down"
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 13,
+            "y": 16
+          },
+          {
+            "x": 13,
+            "y": 14
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "sb3",
-        cells: [{ x: 1, y: 13 }, { x: 18, y: 13 }],
-        exitDir: "right"
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 9,
+            "y": 8
+          },
+          {
+            "x": 9,
+            "y": 11
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "v3",
-        cells: [{ x: 19, y: 15 }, { x: 19, y: 12 }],
-        exitDir: "up"
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 4,
+            "y": 15
+          },
+          {
+            "x": 2,
+            "y": 15
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "h3",
-        cells: [{ x: 19, y: 11 }, { x: 10, y: 11 }],
-        exitDir: "left"
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 7,
+            "y": 9
+          },
+          {
+            "x": 7,
+            "y": 11
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "v8",
-        cells: [{ x: 6, y: 13 }, { x: 6, y: 10 }],
-        exitDir: "up"
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 6,
+            "y": 19
+          },
+          {
+            "x": 10,
+            "y": 19
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 9,
+            "y": 13
+          },
+          {
+            "x": 9,
+            "y": 15
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 12,
+            "y": 0
+          },
+          {
+            "x": 12,
+            "y": 4
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 14,
+            "y": 5
+          },
+          {
+            "x": 17,
+            "y": 5
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 19,
+            "y": 13
+          },
+          {
+            "x": 19,
+            "y": 16
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 6
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 11,
+            "y": 14
+          },
+          {
+            "x": 11,
+            "y": 11
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 15,
+            "y": 13
+          },
+          {
+            "x": 15,
+            "y": 11
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 0,
+            "y": 14
+          },
+          {
+            "x": 0,
+            "y": 16
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 16,
+            "y": 17
+          },
+          {
+            "x": 13,
+            "y": 17
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 7,
+            "y": 16
+          },
+          {
+            "x": 10,
+            "y": 16
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 17,
+            "y": 10
+          },
+          {
+            "x": 14,
+            "y": 10
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 6
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 10,
+            "y": 6
+          },
+          {
+            "x": 10,
+            "y": 4
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 18,
+            "y": 15
+          },
+          {
+            "x": 18,
+            "y": 17
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 6,
+            "y": 17
+          },
+          {
+            "x": 2,
+            "y": 17
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 5,
+            "y": 8
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 13,
+            "y": 3
+          },
+          {
+            "x": 16,
+            "y": 3
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 16,
+            "y": 18
+          },
+          {
+            "x": 18,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 5,
+            "y": 13
+          },
+          {
+            "x": 5,
+            "y": 10
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 14,
+            "y": 14
+          },
+          {
+            "x": 16,
+            "y": 14
+          }
+        ],
+        "exitDir": "right"
       }
     ]
   },
   {
-    id: 8,
-    name: "Double Helix",
-    gridSize: 20,
-    shapes: [
+    "id": 8,
+    "name": "Double Helix",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "a1",
-        cells: [{ x: 2, y: 2 }, { x: 5, y: 2 }],
-        exitDir: "right"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 15,
+            "y": 3
+          },
+          {
+            "x": 11,
+            "y": 3
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "b1",
-        cells: [{ x: 6, y: 1 }, { x: 6, y: 4 }],
-        exitDir: "down"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 7,
+            "y": 5
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "a2",
-        cells: [{ x: 4, y: 5 }, { x: 7, y: 5 }],
-        exitDir: "right"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 6,
+            "y": 17
+          },
+          {
+            "x": 2,
+            "y": 17
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "b2",
-        cells: [{ x: 8, y: 4 }, { x: 8, y: 7 }],
-        exitDir: "down"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 11,
+            "y": 2
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "a3",
-        cells: [{ x: 6, y: 8 }, { x: 9, y: 8 }],
-        exitDir: "right"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 17,
+            "y": 5
+          },
+          {
+            "x": 17,
+            "y": 2
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "b3",
-        cells: [{ x: 10, y: 7 }, { x: 10, y: 10 }],
-        exitDir: "down"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 15,
+            "y": 19
+          },
+          {
+            "x": 12,
+            "y": 19
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "a4",
-        cells: [{ x: 8, y: 11 }, { x: 11, y: 11 }],
-        exitDir: "right"
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 9,
+            "y": 17
+          },
+          {
+            "x": 13,
+            "y": 17
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "b4",
-        cells: [{ x: 12, y: 10 }, { x: 12, y: 13 }],
-        exitDir: "down"
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 7,
+            "y": 9
+          },
+          {
+            "x": 7,
+            "y": 13
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "a5",
-        cells: [{ x: 10, y: 14 }, { x: 13, y: 14 }],
-        exitDir: "right"
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 14,
+            "y": 8
+          },
+          {
+            "x": 14,
+            "y": 6
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "b5",
-        cells: [{ x: 14, y: 13 }, { x: 14, y: 16 }],
-        exitDir: "down"
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 18,
+            "y": 3
+          },
+          {
+            "x": 18,
+            "y": 6
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 5,
+            "y": 14
+          },
+          {
+            "x": 1,
+            "y": 14
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 12,
+            "y": 8
+          },
+          {
+            "x": 10,
+            "y": 8
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 9
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 7
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 14,
+            "y": 14
+          },
+          {
+            "x": 14,
+            "y": 11
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 9,
+            "y": 12
+          },
+          {
+            "x": 9,
+            "y": 9
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 9,
+            "y": 7
+          },
+          {
+            "x": 9,
+            "y": 4
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 8,
+            "y": 9
+          },
+          {
+            "x": 8,
+            "y": 6
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 16,
+            "y": 18
+          },
+          {
+            "x": 16,
+            "y": 14
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 17,
+            "y": 13
+          },
+          {
+            "x": 17,
+            "y": 10
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 6
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 19,
+            "y": 3
+          },
+          {
+            "x": 19,
+            "y": 6
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 10,
+            "y": 18
+          },
+          {
+            "x": 14,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 13,
+            "y": 9
+          },
+          {
+            "x": 11,
+            "y": 9
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 14,
+            "y": 1
+          },
+          {
+            "x": 12,
+            "y": 1
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 0,
+            "y": 9
+          },
+          {
+            "x": 0,
+            "y": 12
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 18,
+            "y": 0
+          },
+          {
+            "x": 16,
+            "y": 0
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 17,
+            "y": 8
+          },
+          {
+            "x": 15,
+            "y": 8
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 10,
+            "y": 12
+          },
+          {
+            "x": 12,
+            "y": 12
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 18,
+            "y": 16
+          },
+          {
+            "x": 18,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 1,
+            "y": 9
+          }
+        ],
+        "exitDir": "up"
       }
     ]
   },
   {
-    id: 9,
-    name: "Quantum Lock",
-    gridSize: 20,
-    shapes: [
+    "id": 9,
+    "name": "Quantum Lock",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "lock",
-        cells: [{ x: 8, y: 10 }, { x: 12, y: 10 }],
-        exitDir: "right"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "b2",
-        cells: [{ x: 13, y: 10 }, { x: 15, y: 10 }],
-        exitDir: "right"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 7,
+            "y": 19
+          },
+          {
+            "x": 5,
+            "y": 19
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "v1",
-        cells: [{ x: 17, y: 11 }, { x: 17, y: 8 }],
-        exitDir: "up"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 9,
+            "y": 11
+          },
+          {
+            "x": 12,
+            "y": 11
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "v2",
-        cells: [{ x: 19, y: 9 }, { x: 19, y: 12 }],
-        exitDir: "down"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 13,
+            "y": 8
+          },
+          {
+            "x": 13,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "h1",
-        cells: [{ x: 18, y: 6 }, { x: 15, y: 6 }],
-        exitDir: "left"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 8,
+            "y": 10
+          },
+          {
+            "x": 8,
+            "y": 12
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "h2",
-        cells: [{ x: 16, y: 14 }, { x: 19, y: 14 }],
-        exitDir: "right"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 3,
+            "y": 16
+          },
+          {
+            "x": 3,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 16,
+            "y": 12
+          },
+          {
+            "x": 16,
+            "y": 16
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 4,
+            "y": 14
+          },
+          {
+            "x": 4,
+            "y": 16
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 5
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 6,
+            "y": 9
+          },
+          {
+            "x": 6,
+            "y": 6
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 11,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 6,
+            "y": 13
+          },
+          {
+            "x": 6,
+            "y": 10
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 11,
+            "y": 15
+          },
+          {
+            "x": 13,
+            "y": 15
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 14,
+            "y": 9
+          },
+          {
+            "x": 11,
+            "y": 9
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 7,
+            "y": 18
+          },
+          {
+            "x": 7,
+            "y": 16
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 19,
+            "y": 4
+          },
+          {
+            "x": 19,
+            "y": 6
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 18,
+            "y": 0
+          },
+          {
+            "x": 14,
+            "y": 0
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 12,
+            "y": 0
+          },
+          {
+            "x": 12,
+            "y": 2
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 4
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 13,
+            "y": 3
+          },
+          {
+            "x": 10,
+            "y": 3
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 4,
+            "y": 13
+          },
+          {
+            "x": 2,
+            "y": 13
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 10,
+            "y": 6
+          },
+          {
+            "x": 10,
+            "y": 10
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 18,
+            "y": 4
+          },
+          {
+            "x": 18,
+            "y": 1
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 14,
+            "y": 8
+          },
+          {
+            "x": 14,
+            "y": 4
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 9,
+            "y": 3
+          },
+          {
+            "x": 9,
+            "y": 5
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 14,
+            "y": 16
+          },
+          {
+            "x": 12,
+            "y": 16
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 7
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 17,
+            "y": 9
+          },
+          {
+            "x": 17,
+            "y": 11
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 9
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 8,
+            "y": 14
+          },
+          {
+            "x": 5,
+            "y": 14
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 12,
+            "y": 12
+          },
+          {
+            "x": 14,
+            "y": 12
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 3,
+            "y": 8
+          },
+          {
+            "x": 3,
+            "y": 12
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 4,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 5
+          }
+        ],
+        "exitDir": "up"
       }
     ]
   },
   {
-    id: 10,
-    name: "Grand Master Chessboard",
-    gridSize: 20,
-    shapes: [
+    "id": 10,
+    "name": "Grand Master Chessboard",
+    "gridSize": 20,
+    "shapes": [
       {
-        id: "q1_h",
-        cells: [{ x: 2, y: 4 }, { x: 6, y: 4 }],
-        exitDir: "right"
+        "id": "s_1",
+        "cells": [
+          {
+            "x": 6,
+            "y": 15
+          },
+          {
+            "x": 6,
+            "y": 17
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "q2_v",
-        cells: [{ x: 8, y: 2 }, { x: 8, y: 6 }],
-        exitDir: "down"
+        "id": "s_2",
+        "cells": [
+          {
+            "x": 13,
+            "y": 5
+          },
+          {
+            "x": 13,
+            "y": 9
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "q3_h",
-        cells: [{ x: 13, y: 8 }, { x: 8, y: 8 }],
-        exitDir: "left"
+        "id": "s_3",
+        "cells": [
+          {
+            "x": 7,
+            "y": 11
+          },
+          {
+            "x": 3,
+            "y": 11
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "q4_v",
-        cells: [{ x: 6, y: 12 }, { x: 6, y: 8 }],
-        exitDir: "up"
+        "id": "s_4",
+        "cells": [
+          {
+            "x": 0,
+            "y": 15
+          },
+          {
+            "x": 0,
+            "y": 13
+          }
+        ],
+        "exitDir": "up"
       },
       {
-        id: "kb1",
-        cells: [{ x: 7, y: 3 }, { x: 7, y: 5 }],
-        exitDir: "down"
+        "id": "s_5",
+        "cells": [
+          {
+            "x": 12,
+            "y": 9
+          },
+          {
+            "x": 12,
+            "y": 11
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "kb2",
-        cells: [{ x: 5, y: 6 }, { x: 9, y: 6 }],
-        exitDir: "right"
+        "id": "s_6",
+        "cells": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "kb3",
-        cells: [{ x: 10, y: 5 }, { x: 10, y: 7 }],
-        exitDir: "up"
+        "id": "s_7",
+        "cells": [
+          {
+            "x": 14,
+            "y": 9
+          },
+          {
+            "x": 16,
+            "y": 9
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "kb4",
-        cells: [{ x: 12, y: 2 }, { x: 9, y: 2 }],
-        exitDir: "left"
+        "id": "s_8",
+        "cells": [
+          {
+            "x": 19,
+            "y": 9
+          },
+          {
+            "x": 19,
+            "y": 12
+          }
+        ],
+        "exitDir": "down"
       },
       {
-        id: "kb5",
-        cells: [{ x: 7, y: 2 }, { x: 7, y: 0 }],
-        exitDir: "up"
+        "id": "s_9",
+        "cells": [
+          {
+            "x": 9,
+            "y": 7
+          },
+          {
+            "x": 11,
+            "y": 7
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "br_h1",
-        cells: [{ x: 12, y: 12 }, { x: 15, y: 12 }],
-        exitDir: "right"
+        "id": "s_10",
+        "cells": [
+          {
+            "x": 9,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "exitDir": "left"
       },
       {
-        id: "br_v1",
-        cells: [{ x: 16, y: 10 }, { x: 16, y: 14 }],
-        exitDir: "down"
+        "id": "s_11",
+        "cells": [
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 9,
+            "y": 6
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "br_h2",
-        cells: [{ x: 17, y: 15 }, { x: 14, y: 15 }],
-        exitDir: "left"
+        "id": "s_12",
+        "cells": [
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 5
+          }
+        ],
+        "exitDir": "right"
       },
       {
-        id: "br_v2",
-        cells: [{ x: 13, y: 16 }, { x: 13, y: 13 }],
-        exitDir: "up"
+        "id": "s_13",
+        "cells": [
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_14",
+        "cells": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_15",
+        "cells": [
+          {
+            "x": 5,
+            "y": 13
+          },
+          {
+            "x": 5,
+            "y": 16
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_16",
+        "cells": [
+          {
+            "x": 14,
+            "y": 8
+          },
+          {
+            "x": 16,
+            "y": 8
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_17",
+        "cells": [
+          {
+            "x": 15,
+            "y": 18
+          },
+          {
+            "x": 15,
+            "y": 16
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_18",
+        "cells": [
+          {
+            "x": 3,
+            "y": 14
+          },
+          {
+            "x": 3,
+            "y": 12
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_19",
+        "cells": [
+          {
+            "x": 0,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 7
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_20",
+        "cells": [
+          {
+            "x": 18,
+            "y": 3
+          },
+          {
+            "x": 14,
+            "y": 3
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_21",
+        "cells": [
+          {
+            "x": 9,
+            "y": 16
+          },
+          {
+            "x": 9,
+            "y": 13
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_22",
+        "cells": [
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 12,
+            "y": 2
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_23",
+        "cells": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_24",
+        "cells": [
+          {
+            "x": 10,
+            "y": 14
+          },
+          {
+            "x": 10,
+            "y": 17
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_25",
+        "cells": [
+          {
+            "x": 16,
+            "y": 4
+          },
+          {
+            "x": 18,
+            "y": 4
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_26",
+        "cells": [
+          {
+            "x": 12,
+            "y": 15
+          },
+          {
+            "x": 12,
+            "y": 18
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_27",
+        "cells": [
+          {
+            "x": 3,
+            "y": 18
+          },
+          {
+            "x": 6,
+            "y": 18
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_28",
+        "cells": [
+          {
+            "x": 8,
+            "y": 19
+          },
+          {
+            "x": 4,
+            "y": 19
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_29",
+        "cells": [
+          {
+            "x": 2,
+            "y": 14
+          },
+          {
+            "x": 2,
+            "y": 16
+          }
+        ],
+        "exitDir": "down"
+      },
+      {
+        "id": "s_30",
+        "cells": [
+          {
+            "x": 15,
+            "y": 1
+          },
+          {
+            "x": 17,
+            "y": 1
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_31",
+        "cells": [
+          {
+            "x": 17,
+            "y": 9
+          },
+          {
+            "x": 17,
+            "y": 7
+          }
+        ],
+        "exitDir": "up"
+      },
+      {
+        "id": "s_32",
+        "cells": [
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          }
+        ],
+        "exitDir": "right"
+      },
+      {
+        "id": "s_33",
+        "cells": [
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "exitDir": "left"
+      },
+      {
+        "id": "s_34",
+        "cells": [
+          {
+            "x": 11,
+            "y": 15
+          },
+          {
+            "x": 11,
+            "y": 11
+          }
+        ],
+        "exitDir": "up"
       }
     ]
   }
