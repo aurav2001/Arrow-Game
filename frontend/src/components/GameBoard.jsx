@@ -383,7 +383,7 @@ export default function GameBoard({ levelId, onBack, onProgressSaved }) {
             <Settings size={16} />
           </button>
           <button className="px-3 py-1.5 bg-slate-800/80 hover:bg-slate-700/80 border border-white/5 rounded-xl shadow-sm text-slate-300 font-bold text-xs transition" onClick={onBack}>
-            Log in
+            Back
           </button>
         </div>
       </div>
